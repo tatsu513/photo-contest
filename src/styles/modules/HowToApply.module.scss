@@ -1,0 +1,90 @@
+@import "../common.scss";
+@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+
+.howToApplyBox {
+  padding-bottom: 40px;
+  position: relative;
+  background-color: $light-green;
+}
+.titleBox {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.titleText {
+  background-color: $black;
+  border-radius: 16px;
+  color: $white;
+  font-family: "Kaisei Opti", serif;
+  font-size: 20px;
+  letter-spacing: 4px;
+  line-height: 32px;
+  text-align: center;
+}
+.flow {
+  margin-bottom: 48px;
+  padding: 32px;
+  width: 100%;
+  background-color: $white;
+  text-align: center;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+.step {
+  height: 86px;
+  width: 86px;
+  margin: 0 auto 24px;
+  position: relative;
+  border: 1px dashed $black;
+  border-radius: 43px;
+  text-align: center;
+}
+.stepContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+}
+.stepText {
+  display: inline-block;
+  width: 100%;
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 16px;
+}
+.stepNumber {
+  display: inline-block;
+  width: 100%;
+  font-family: "Ropa Sans";
+  font-size: 40px;
+  line-height: 0.7;
+}
+.stepBodyText {
+  margin-bottom: 32px;
+  font-size: 18px;
+  text-align: center;
+}
+.flowImage {
+  height: 148px;
+  width: 148px;
+  margin: 0 auto 40px;
+  &.flowImage2 {
+    width: 100%;
+    height: auto;
+  }
+}
+.buttonWrapper {
+  margin-bottom: 24px;
+}
+.notes {
+  width: 100%;
+  text-align: left;
+}
+.notesMain {
+  font-weight: bold;
+}
+.circleWrapper {
+  position: absolute;
+  top: auto;
+  right: 0;
+  left: 0;
+}
