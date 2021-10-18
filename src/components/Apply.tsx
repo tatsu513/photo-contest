@@ -7,6 +7,7 @@ import insta from "images/insta_color_sp.png";
 import SecondaryButton from "./buttons/SecondaryButton";
 import PrimaryButton from "./buttons/PrimaryButton";
 import Circles from "./commons/Circles";
+import TextTitle from "./commons/TextTitle";
 
 const HowToApply = () => {
   const ctx = useContext(ContextData);
@@ -15,9 +16,7 @@ const HowToApply = () => {
       className={styles.howToApplyBox}
       style={{ paddingTop: ctx.circleWidth / 2 + 55 }}
     >
-      <section className={styles.titleBox}>
-        <h1 className={styles.titleText}>応募方法</h1>
-      </section>
+      <TextTitle text={"応募方法"} />
       <section className={styles.flows}>
         <ul>
           <li className={styles.flow}>

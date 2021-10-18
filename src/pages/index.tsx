@@ -6,6 +6,7 @@ import Yushusakuhin from "@/components/Yushusakuhin";
 import Posts from "@/components/Posts";
 import HowToApply from "@/components/Apply";
 import Torikatakouza from "@/components/Torikatakouza";
+import Boshuyoukou from "@/components/Boshuyoukou";
 
 const IndexPage = () => (
   <>
@@ -18,6 +19,7 @@ const IndexPage = () => (
     <Posts />
     <HowToApply />
     <Torikatakouza />
+    <Boshuyoukou />
   </>
 );
 

@@ -33,7 +33,7 @@ const Torikatakouza = () => {
         className="circleWrapper"
         style={{ bottom: (ctx.circleWidth / 2) * -1 }}
       >
-        <Circles color={"red"} />
+        <Circles color={"#fff"} />
       </div>
     </div>
   );

@@ -1,0 +1,21 @@
+@import "../common.scss";
+
+.boshuyoukouBox {
+  background-color: $light-green;
+}
+.body {
+  padding: 24px 8px 64px;
+}
+.listItemBox {
+  margin-bottom: 32px;
+}
+.listItem {
+  margin-bottom: 4px;
+  &.listItemMain {
+    margin-bottom: 32px;
+    font-weight: bold;
+  }
+}
+.listItemLabel {
+  font-weight: normal;
+}
