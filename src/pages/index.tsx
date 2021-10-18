@@ -5,6 +5,7 @@ import Ichioshi from "@/components/Ichioshi";
 import Yushusakuhin from "@/components/Yushusakuhin";
 import Posts from "@/components/Posts";
 import HowToApply from "@/components/Apply";
+import Torikatakouza from "@/components/Torikatakouza";
 
 const IndexPage = () => (
   <>
@@ -16,6 +17,7 @@ const IndexPage = () => (
     <Yushusakuhin />
     <Posts />
     <HowToApply />
+    <Torikatakouza />
   </>
 );
 
