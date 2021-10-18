@@ -48,7 +48,7 @@ const Posts = () => {
       </section>
       <PrimaryButton text={"もっと見る"} />
       <div
-        className={styles.circleWrapper}
+        className="circleWrapper"
         style={{ bottom: (ctx.circleWidth / 2) * -1 }}
       >
         <Circles color={"#fff"} />

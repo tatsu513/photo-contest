@@ -30,7 +30,7 @@ const Ichioshi = () => {
       </div>
       <PrimaryButton text={"応募方法はこちら"} />
       <div
-        className={styles.circleWrapper}
+        className="circleWrapper"
         style={{ bottom: (ctx.circleWidth / 2) * -1 }}
       >
         <Circles color={"#fff"} />

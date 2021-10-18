@@ -103,7 +103,7 @@ const HowToApply = () => {
         </ul>
       </section>
       <div
-        className={styles.circleWrapper}
+        className="circleWrapper"
         style={{ bottom: (ctx.circleWidth / 2) * -1 }}
       >
         <Circles color={"#e9f4e9"} />
