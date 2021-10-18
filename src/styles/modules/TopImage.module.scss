@@ -1,0 +1,22 @@
+@import "../common.scss";
+
+.topImageBox {
+  height: 100vh;
+  position: relative;
+  background-color: $blue;
+}
+.image {
+  margin: 0 auto;
+  max-width: 450px;
+  padding: 0 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.photographer {
+  position: absolute;
+  right: 24px;
+  bottom: 40px;
+  color: $white;
+  font-style: 12px;
+}

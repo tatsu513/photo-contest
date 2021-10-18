@@ -1,0 +1,14 @@
+@import "../common.scss";
+
+.buttonBox {
+  text-align: center;
+}
+.button {
+  width: 100%;
+  line-height: 48px;
+  border: 1px solid $green;
+  border-radius: 4px;
+  color: $green;
+  font-size: 12px;
+  text-align: center;
+}

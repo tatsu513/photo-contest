@@ -1,0 +1,30 @@
+@import "../common.scss";
+
+.yushusakuhinBox {
+  background-color: $light-green;
+  padding-bottom: 8px;
+  position: relative;
+}
+.titleBox {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.ribonImage {
+  margin-bottom: 24px;
+}
+.text {
+  margin-bottom: 24px;
+}
+.note {
+  position: relative;
+  top: -24px;
+  color: $grey;
+  font-size: 12px;
+  text-align: center;
+}
+.circleWrapper {
+  position: absolute;
+  top: auto;
+  right: 0;
+  left: 0;
+}

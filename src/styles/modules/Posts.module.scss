@@ -1,0 +1,63 @@
+@import "../common.scss";
+.postsBox {
+  position: relative;
+  padding-bottom: 56px;
+}
+.titleBox {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.text {
+  margin-bottom: 48px;
+  text-align: center;
+}
+.postBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+.post {
+  margin-right: 6%;
+  margin-bottom: 48px;
+  position: relative;
+  width: 47%;
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+.anotherIcon {
+  height: 19px;
+  width: 19px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  bottom: auto;
+  left: auto;
+  z-index: 10;
+
+  & > div {
+    height: 100%;
+    width: 100%;
+  }
+}
+.username {
+  width: 100%;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.postText {
+  width: 100%;
+  color: $grey;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.circleWrapper {
+  position: absolute;
+  top: auto;
+  right: 0;
+  left: 0;
+}
