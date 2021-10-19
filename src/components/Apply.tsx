@@ -1,5 +1,3 @@
-import { ContextData } from "pages/_app";
-import { useContext } from "react";
 import styles from "styles/modules/HowToApply.module.scss";
 import Image from "next/image";
 import flow01 from "images/flow01_sp.svg";
@@ -11,12 +9,8 @@ import TextTitle from "./commons/TextTitle";
 import naminamiSp from "images/naminami-shiro_sp.svg";
 
 const HowToApply = () => {
-  const ctx = useContext(ContextData);
   return (
-    <div
-      className={styles.howToApplyBox}
-      style={{ paddingTop: ctx.circleWidth / 2 + 55 }}
-    >
+    <div className={styles.howToApplyBox}>
       <TextTitle text={"応募方法"} />
       <section className={styles.flows}>
         <ul>

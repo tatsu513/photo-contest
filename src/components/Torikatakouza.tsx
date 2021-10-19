@@ -1,17 +1,11 @@
-import { ContextData } from "pages/_app";
-import { useContext } from "react";
 import styles from "styles/modules/Torikatakouza.module.scss";
 import Image from "next/image";
 import sectionTitle from "images/section_title04_sp.svg";
 import naminamiSp from "images/naminami-midori_sp.svg";
 
 const Torikatakouza = () => {
-  const ctx = useContext(ContextData);
   return (
-    <div
-      className={styles.torikatakouzaBox}
-      style={{ paddingTop: ctx.circleWidth / 2 + 55 }}
-    >
+    <div className={styles.torikatakouzaBox}>
       <div className={styles.titleBox}>
         <Image src={sectionTitle} alt="スマホ写真撮り方講座" />
       </div>

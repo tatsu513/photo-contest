@@ -1,5 +1,3 @@
-import { ContextData } from "pages/_app";
-import { useContext } from "react";
 import styles from "styles/modules/Posts.module.scss";
 import Image from "next/image";
 import sectionTitle from "images/section_title03_sp.svg";
@@ -8,12 +6,8 @@ import PrimaryButton from "./buttons/PrimaryButton";
 import naminamiSp from "images/naminami-midori_sp.svg";
 
 const Posts = () => {
-  const ctx = useContext(ContextData);
   return (
-    <div
-      className={styles.postsBox}
-      style={{ paddingTop: ctx.circleWidth / 2 + 55 }}
-    >
+    <div className={styles.postsBox}>
       <section className={styles.titleBox}>
         <Image src={sectionTitle} alt={"皆さまの投稿作品"} />
       </section>

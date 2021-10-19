@@ -1,5 +1,3 @@
-import { ContextData } from "pages/_app";
-import { useContext } from "react";
 import styles from "styles/modules/Boshuyoukou.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,12 +9,8 @@ import Mayumiotsuka from "images/mayumiotsukaprofile_sp.png";
 import Instagram from "images/Instagram.svg";
 
 const Boshuyoukou = () => {
-  const ctx = useContext(ContextData);
   return (
-    <div
-      className={styles.boshuyoukouBox}
-      style={{ paddingTop: ctx.circleWidth / 2 + 55 }}
-    >
+    <div className={styles.boshuyoukouBox}>
       <TextTitle text={"募集要項"} />
       <section>
         <Essentials text={"応募規約"} />
