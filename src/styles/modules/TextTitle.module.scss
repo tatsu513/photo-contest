@@ -1,0 +1,17 @@
+@import "../common.scss";
+@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+
+.titleBox {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.titleText {
+  background-color: $black;
+  border-radius: 16px;
+  color: $white;
+  font-family: "Kaisei Opti", serif;
+  font-size: 20px;
+  letter-spacing: 4px;
+  line-height: 32px;
+  text-align: center;
+}

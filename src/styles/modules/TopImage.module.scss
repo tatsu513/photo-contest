@@ -1,0 +1,39 @@
+@import "../common.scss";
+
+.topImageBox {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-image: url("../../images/top_image01.webp");
+  background-position: center;
+  transition: background-image 500ms ease;
+  &.bg1 {
+    background-image: url("../../images/top_image01.webp");
+  }
+  &.bg2 {
+    background-image: url("../../images/top_image02.webp");
+  }
+  &.bg3 {
+    background-image: url("../../images/top_image03.webp");
+  }
+  &.bg4 {
+    background-image: url("../../images/top_image04.webp");
+  }
+}
+.image {
+  margin: 0 auto;
+  max-width: 450px;
+  padding: 0 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.photographer {
+  position: absolute;
+  right: 24px;
+  bottom: 56px;
+  color: $white;
+  font-size: 12px;
+}

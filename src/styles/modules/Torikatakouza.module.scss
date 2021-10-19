@@ -1,0 +1,25 @@
+@import "../common.scss";
+
+.torikatakouzaBox {
+  padding: 56px 0;
+  position: relative;
+}
+.titleBox {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.text {
+  margin-bottom: 48px;
+}
+.youtubeContent {
+  margin-bottom: 48px;
+}
+.movie {
+  width: 100%;
+  height: 170px;
+  margin-bottom: 16px;
+  background-color: $blue;
+}
+.title {
+  text-align: center;
+}
