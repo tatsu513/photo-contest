@@ -47,8 +47,8 @@ const Posts = () => {
             ))}
           </ul>
         </div>
+        <PrimaryButton text={"もっと見る"} />
       </section>
-      <PrimaryButton text={"もっと見る"} />
       <div className="namiBox">
         <Image src={naminamiSp} alt="" />
       </div>

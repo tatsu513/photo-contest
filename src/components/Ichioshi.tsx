@@ -25,10 +25,12 @@ const Ichioshi = () => {
           たくさんのご応募お待ちしています。
         </p>
       </section>
-      <div className={styles.imageIlustBox}>
-        <Image src={shotImage} alt="風景を撮影" />
-      </div>
-      <PrimaryButton text={"応募方法はこちら"} />
+      <section>
+        <div className={styles.imageIlustBox}>
+          <Image src={shotImage} alt="風景を撮影" />
+        </div>
+        <PrimaryButton text={"応募方法はこちら"} />
+      </section>
       <div className="namiBox">
         <Image src={naminamiSp} alt="" />
       </div>
