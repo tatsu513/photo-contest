@@ -27,7 +27,9 @@ const Yushusakuhin = () => {
           <br />
           また、流山市「杜のアトリエ黎明」で、優秀作品のリアル展示会も予定しています。
         </p>
-        <Image src={calenderImage} alt={"カレンダー"} />
+        <div className={styles.calenderImageBox}>
+          <Image src={calenderImage} alt={"カレンダー"} />
+        </div>
         <p className={styles.note}>※画像はイメージです</p>
       </section>
       <div

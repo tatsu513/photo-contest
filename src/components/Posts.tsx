@@ -31,14 +31,16 @@ const Posts = () => {
                     alt="別タブでインスタグラムを開く"
                   />
                 </div>
-                <Image
-                  src={
-                    "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg"
-                  }
-                  alt="サンプル"
-                  width={500}
-                  height={500}
-                />
+                <div className={styles.postImageBox}>
+                  <Image
+                    src={
+                      "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg"
+                    }
+                    alt="サンプル"
+                    width={1000}
+                    height={1000}
+                  />
+                </div>
                 <div className={styles.username}>akemi_kokubo</div>
                 <p className={styles.postText}>おおおおおおおお</p>
               </li>
