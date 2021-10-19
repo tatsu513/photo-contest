@@ -1,10 +1,14 @@
 import { ContextData } from "pages/_app";
 import { useContext } from "react";
 import styles from "styles/modules/Boshuyoukou.module.scss";
+import Image from "next/image";
+import Link from "next/link";
 import PrimaryButton from "./buttons/PrimaryButton";
 import SecondaryButton from "./buttons/SecondaryButton";
 import Essentials from "./commons/Essentials";
 import TextTitle from "./commons/TextTitle";
+import Mayumiotsuka from "images/mayumiotsukaprofile_sp.png";
+import Instagram from "images/Instagram.svg";
 
 const Boshuyoukou = () => {
   const ctx = useContext(ContextData);
@@ -100,6 +104,56 @@ const Boshuyoukou = () => {
               ・流山市「杜のアトリエ黎明」での、優秀作品展示会で展示予定です。
             </li>
           </ul>
+        </div>
+      </section>
+      <section>
+        <Essentials text={"アドバイザー"} />
+        <div className={styles.body}>
+          <div className={styles.adviserPhoto}>
+            <Image src={Mayumiotsuka} alt="大塚まゆみプロフィール" />
+          </div>
+          <div className={styles.profile}>
+            <h3 className={styles.prfileName}>
+              大塚まゆみ
+              <span className={styles.adviserInstaIcon}>
+                <Image src={Instagram} alt="インスタグラム" />
+              </span>
+            </h3>
+            <span className={styles.profileJob}>
+              フォトグラファー（流山市在住）
+            </span>
+          </div>
+          <ul className={styles.listItemBox}>
+            <li
+              className={styles.listItem}
+              style={{ marginBottom: 16 }}
+            >
+              2014年よりフリーランスフォトグラファーとして活動開始。　キッズ・ファミリーフォトを経て、ファッション、ブライダル、スタジオ撮影（人物・物撮り）などジャンルを問わず撮影。
+              <br />
+              人物撮影を得意とし、WEB、広告など幅広く活躍中。
+            </li>
+            <li className={styles.listItem}>
+              Web site：
+              <Link href="https://mayumiotsuka.com">
+                <a className={styles.ListItemLink} target="_blank">
+                  https://mayumiotsuka.com
+                </a>
+              </Link>
+            </li>
+            <li className={styles.listItem}>
+              Photo studio：
+              <Link href="https://photo45.net">
+                <a className={styles.ListItemLink} target="_blank">
+                  https://photo45.net
+                </a>
+              </Link>
+            </li>
+          </ul>
+          <div className={styles.message}>
+            流山市内には古き良き街並みも、新しく近代的な側面も、四季折々楽しめる自然も揃っています。
+            <br />
+            皆様の一推しのスポットや好き！を詰め込んで下さい。たくさんのすばらしい作品に出合えるのを楽しみにしています！
+          </div>
         </div>
       </section>
     </div>
