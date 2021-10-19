@@ -1,0 +1,21 @@
+@import "../common.scss";
+.footerBox {
+  width: 100%;
+  background-color: $light-green;
+  font-size: 0;
+  text-align: center;
+}
+.footerContent {
+  padding: 16px;
+  width: 100%;
+  background: $black;
+}
+.company {
+  margin-bottom: 12px;
+  color: $white;
+  font-size: 10px;
+}
+.logoBox {
+  margin: 0 auto;
+  width: 118px;
+}

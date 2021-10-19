@@ -7,6 +7,7 @@ import Posts from "@/components/Posts";
 import HowToApply from "@/components/Apply";
 import Torikatakouza from "@/components/Torikatakouza";
 import Boshuyoukou from "@/components/Boshuyoukou";
+import Footer from "@/components/Footer";
 
 const IndexPage = () => (
   <>
@@ -20,6 +21,7 @@ const IndexPage = () => (
     <HowToApply />
     <Torikatakouza />
     <Boshuyoukou />
+    <Footer />
   </>
 );
 

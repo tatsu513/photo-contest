@@ -156,6 +156,17 @@ const Boshuyoukou = () => {
           </div>
         </div>
       </section>
+      <section>
+        <Essentials text={"お問い合わせ"} />
+        <div className={styles.body}>
+          <ul className={styles.listItemBox}>
+            <li className={styles.listItem}>
+              本キャンペーンに関するお問い合わせは、流山ツーリズムデザイン公式Instagramのダイレクトメッセージ（DM）機能よりお願いします。
+            </li>
+            <li className={styles.listItem}>@nagareyama_td</li>
+          </ul>
+        </div>
+      </section>
     </div>
   );
 };
