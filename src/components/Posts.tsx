@@ -5,7 +5,7 @@ import Image from "next/image";
 import sectionTitle from "images/section_title03_sp.svg";
 import anotherIcon from "images/anotherIcon.svg";
 import PrimaryButton from "./buttons/PrimaryButton";
-import Circles from "./commons/Circles";
+import naminamiSp from "images/naminami-midori_sp.svg";
 
 const Posts = () => {
   const ctx = useContext(ContextData);
@@ -49,11 +49,8 @@ const Posts = () => {
         </div>
       </section>
       <PrimaryButton text={"もっと見る"} />
-      <div
-        className="circleWrapper"
-        style={{ bottom: (ctx.circleWidth / 2) * -1 }}
-      >
-        <Circles color={"#fff"} />
+      <div className="namiBox">
+        <Image src={naminamiSp} alt="" />
       </div>
     </div>
   );

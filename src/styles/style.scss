@@ -28,3 +28,13 @@ section {
   right: 0;
   left: 0;
 }
+.namiBox {
+  width: 101%;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0;
+}

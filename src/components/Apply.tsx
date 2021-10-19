@@ -3,11 +3,12 @@ import { useContext } from "react";
 import styles from "styles/modules/HowToApply.module.scss";
 import Image from "next/image";
 import flow01 from "images/flow01_sp.svg";
+import flow03 from "images/flow03_sp.svg";
 import insta from "images/insta_color_sp.png";
 import SecondaryButton from "./buttons/SecondaryButton";
 import PrimaryButton from "./buttons/PrimaryButton";
-import Circles from "./commons/Circles";
 import TextTitle from "./commons/TextTitle";
+import naminamiSp from "images/naminami-shiro_sp.svg";
 
 const HowToApply = () => {
   const ctx = useContext(ContextData);
@@ -83,7 +84,7 @@ const HowToApply = () => {
             <div
               className={`${styles.flowImage} ${styles.flowImage2}`}
             >
-              <Image src={flow01} alt="インスタグラム" />
+              <Image src={flow03} alt="インスタグラムへ投稿！" />
             </div>
             <div className={styles.buttonWrapper}>
               <SecondaryButton
@@ -101,11 +102,8 @@ const HowToApply = () => {
           </li>
         </ul>
       </section>
-      <div
-        className="circleWrapper"
-        style={{ bottom: (ctx.circleWidth / 2) * -1 }}
-      >
-        <Circles color={"#e9f4e9"} />
+      <div className="namiBox">
+        <Image src={naminamiSp} alt="" />
       </div>
     </div>
   );

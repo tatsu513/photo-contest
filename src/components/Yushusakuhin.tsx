@@ -5,7 +5,7 @@ import Image from "next/image";
 import Ribon from "images/saiyushu_ribon_sp.svg";
 import sectionTitle from "images/section_title02_sp.svg";
 import calenderImage from "images/saiyushu_image_sp.png";
-import Circles from "@/components/commons/Circles";
+import naminamiSp from "images/naminami-shiro_sp.svg";
 
 const Yushusakuhin = () => {
   const ctx = useContext(ContextData);
@@ -32,11 +32,8 @@ const Yushusakuhin = () => {
         </div>
         <p className={styles.note}>※画像はイメージです</p>
       </section>
-      <div
-        className="circleWrapper"
-        style={{ bottom: (ctx.circleWidth / 2) * -1 }}
-      >
-        <Circles color={"#e9f4e9"} />
+      <div className="namiBox">
+        <Image src={naminamiSp} alt="" />
       </div>
     </div>
   );

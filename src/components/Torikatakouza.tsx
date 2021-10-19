@@ -3,7 +3,7 @@ import { useContext } from "react";
 import styles from "styles/modules/Torikatakouza.module.scss";
 import Image from "next/image";
 import sectionTitle from "images/section_title04_sp.svg";
-import Circles from "./commons/Circles";
+import naminamiSp from "images/naminami-midori_sp.svg";
 
 const Torikatakouza = () => {
   const ctx = useContext(ContextData);
@@ -29,11 +29,8 @@ const Torikatakouza = () => {
           <div className={styles.title}>明るさを調整しよう！編</div>
         </div>
       </section>
-      <div
-        className="circleWrapper"
-        style={{ bottom: (ctx.circleWidth / 2) * -1 }}
-      >
-        <Circles color={"#fff"} />
+      <div className="namiBox">
+        <Image src={naminamiSp} alt="" />
       </div>
     </div>
   );

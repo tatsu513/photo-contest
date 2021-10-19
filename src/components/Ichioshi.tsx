@@ -3,9 +3,9 @@ import Image from "next/image";
 import sectionTitle from "images/section_title01_sp.svg";
 import shotImage from "images/to_shot_image_sp.png";
 import PrimaryButton from "./buttons/PrimaryButton";
-import Circles from "./commons/Circles";
 import { ContextData } from "pages/_app";
 import { useContext } from "react";
+import naminamiSp from "images/naminami-midori_sp.svg";
 
 const Ichioshi = () => {
   const ctx = useContext(ContextData);
@@ -29,11 +29,8 @@ const Ichioshi = () => {
         <Image src={shotImage} alt="風景を撮影" />
       </div>
       <PrimaryButton text={"応募方法はこちら"} />
-      <div
-        className="circleWrapper"
-        style={{ bottom: (ctx.circleWidth / 2) * -1 }}
-      >
-        <Circles color={"#fff"} />
+      <div className="namiBox">
+        <Image src={naminamiSp} alt="" />
       </div>
     </div>
   );
