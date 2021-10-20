@@ -41,18 +41,27 @@
     width: 100%;
   }
 }
-.username {
-  width: 100%;
-  font-weight: bold;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 .postText {
+  @include text-truncate(12, 1.7, 3, #fff);
+  height: 60px;
   width: 100%;
   color: $grey;
   font-size: 12px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+}
+@supports (-webkit-line-clamp: 3) {
+  .postText {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::before {
+      content: "";
+    }
+
+    &::after {
+      content: "";
+    }
+  }
 }

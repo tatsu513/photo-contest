@@ -35,7 +35,7 @@ export const getStaticProps = async () => {
   const instagramId = 17841450082182860;
   const query = encodeURI("マキアート");
   const accessToken =
-    "EAAqkOD7kZBkkBAF0aT6G2lVXUz8ZC6b4kQDVdlqq1CVxXLNOalfbjfF6MXbgWidGY2zlKJHZAVPdLRBiZARjGio2XVqkji6oEqMewmLE3NZCfeFWCwCEwPVUIXaZAsZALT2H24wrusjqBx4fOxl9PZBUfE1gXew8nc6q6kOs3pEBV8BkmZBnqOT2z";
+    "EAAqkOD7kZBkkBAOxvYZA4pVTktnSdkKBXgm17duwa0ay5ueQjGCUKKnGPWLirLE5qvZB1cqMs8qrpQKOIgBpzPwfIjzUGCjwiIC79xkB5RB8ao3oM290eLzZArQr8npZBA5ECNPDaSlJRsrSNZBYlc8offSRYK7aGgfZAKLQmJWEgCfRVUBRHZAH";
   const idSearchUrl = `https://graph.facebook.com/ig_hashtag_search?user_id=${instagramId}&q=${query}&access_token=${accessToken}`;
 
   const res = await fetch(idSearchUrl, { method: "GET" });
@@ -47,6 +47,7 @@ export const getStaticProps = async () => {
   const dataRes = await fetch(getDataUrl, { method: "GET" });
   const dataJson = await dataRes.json();
   const postData = dataJson;
+
   return { props: { postData } };
 };
 

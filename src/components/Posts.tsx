@@ -26,30 +26,34 @@ const Posts: React.VFC<Props> = ({ postData }) => {
             {posts.map((post, i) => (
               <li key={i} className={styles.post}>
                 <Link href={post.permalink}>
-                  <div className={styles.anotherIcon}>
-                    <Image
-                      src={anotherIcon}
-                      alt="別タブでインスタグラムを開く"
-                    />
-                  </div>
-                  <a className={styles.ListItemLink} target="_blank">
-                    <div className={styles.postImageBox}>
+                  <>
+                    <div className={styles.anotherIcon}>
                       <Image
-                        src={
-                          post.media_url
-                            ? post.media_url
-                            : post.children.data[1].media_url
-                        }
-                        alt="サンプル"
-                        width={1000}
-                        height={1000}
+                        src={anotherIcon}
+                        alt="別タブでインスタグラムを開く"
                       />
                     </div>
-                    <div className={styles.username}>
-                      akemi_kokubo
-                    </div>
-                    <p className={styles.postText}>{post.caption}</p>
-                  </a>
+                    <a
+                      className={styles.ListItemLink}
+                      target="_blank"
+                    >
+                      <div className={styles.postImageBox}>
+                        <Image
+                          src={
+                            post.media_url
+                              ? post.media_url
+                              : post.children.data[1].media_url
+                          }
+                          alt="サンプル"
+                          width={1000}
+                          height={1000}
+                        />
+                      </div>
+                      <p className={styles.postText}>
+                        {post.caption}
+                      </p>
+                    </a>
+                  </>
                 </Link>
               </li>
             ))}
