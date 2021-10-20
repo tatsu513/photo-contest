@@ -7,6 +7,11 @@
   margin-bottom: 40px;
   text-align: center;
 }
+.postSection {
+  @include mq(md) {
+    width: 864px;
+  }
+}
 .text {
   margin-bottom: 48px;
   text-align: center;
@@ -21,7 +26,12 @@
   position: relative;
   width: 47%;
 
-  &:nth-child(2n) {
+  @include mq(md) {
+    width: 256px;
+    margin-right: 24px;
+  }
+
+  &:nth-child(3n) {
     margin-right: 0;
   }
 }

@@ -1,21 +1,21 @@
 import styles from "styles/modules/Ichioshi.module.scss";
 import Image from "next/image";
-import sectionTitle from "images/section_title01_sp.svg";
+import sectionTitleSp from "images/section_title01_sp.svg";
+import sectionTitleMd from "images/section_title01_md.svg";
 import shotImage from "images/to_shot_image_sp.png";
 import PrimaryButton from "./buttons/PrimaryButton";
 import { ContextData } from "pages/_app";
 import { useContext } from "react";
-import naminamiSp from "images/naminami-midori_sp.svg";
 
 const Ichioshi = () => {
   const ctx = useContext(ContextData);
+  const isMd = ctx.windowWidth > 600 && ctx.windowWidth <= 1024;
+
+  const titleImage = isMd ? sectionTitleMd : sectionTitleSp;
   return (
     <div className={styles.ichioshiBox}>
       <h1 className={styles.title}>
-        <Image
-          src={sectionTitle}
-          alt="流山の風景を投稿してください"
-        />
+        <Image src={titleImage} alt="流山の風景を投稿してください" />
       </h1>
       <section className={styles.text}>
         <p>
@@ -31,9 +31,7 @@ const Ichioshi = () => {
         </div>
         <PrimaryButton text={"応募方法はこちら"} />
       </section>
-      <div className="namiBox">
-        <Image src={naminamiSp} alt="" />
-      </div>
+      <div className="namiBox midori" />
     </div>
   );
 };

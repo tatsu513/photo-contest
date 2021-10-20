@@ -3,7 +3,6 @@ import Image from "next/image";
 import sectionTitle from "images/section_title03_sp.svg";
 import anotherIcon from "images/anotherIcon.svg";
 import PrimaryButton from "./buttons/PrimaryButton";
-import naminamiSp from "images/naminami-midori_sp.svg";
 
 const Posts = () => {
   return (
@@ -11,7 +10,7 @@ const Posts = () => {
       <section className={styles.titleBox}>
         <Image src={sectionTitle} alt={"皆さまの投稿作品"} />
       </section>
-      <section>
+      <section className={styles.postSection}>
         <p className={styles.text}>
           Instagramに投稿された作品から、ピックアップしてご紹介！
         </p>
@@ -43,9 +42,7 @@ const Posts = () => {
         </div>
         <PrimaryButton text={"もっと見る"} />
       </section>
-      <div className="namiBox">
-        <Image src={naminamiSp} alt="" />
-      </div>
+      <div className="namiBox midori" />
     </div>
   );
 };

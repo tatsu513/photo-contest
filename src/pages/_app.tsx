@@ -16,11 +16,9 @@ import Auth from "@/components/Auth";
 
 interface InitialData {
   windowWidth: number;
-  circleWidth: number;
-  setContext: Dispatch<
+  setCtx: Dispatch<
     SetStateAction<{
       windowWidth: number;
-      circleWidth: number;
     }>
   >;
 }
@@ -30,29 +28,24 @@ export const ContextData = createContext<InitialData>(
 );
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const [ctx, setCtx] = useState({
+    windowWidth: 0,
+  });
   const user = "user";
   const pw = "password";
   const [isAdmin, setIsAdmin] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const [context, setContext] = useState({
-    windowWidth: 0,
-    circleWidth: 0,
-  });
   useEffect(() => {
     const onResize = () => {
-      setContext(() => ({
+      setCtx(() => ({
         windowWidth: window.innerWidth,
-        circleWidth: window.innerWidth / 6,
       }));
     };
+    onResize();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  });
-  useEffect(() => {
-    const width = window.innerWidth;
-    setContext({ windowWidth: width, circleWidth: width / 6 });
   }, []);
 
   useLayoutEffect(() => {
@@ -79,7 +72,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     }
   }, [username, password]);
   return (
-    <ContextData.Provider value={{ ...context, setContext }}>
+    <ContextData.Provider value={{ ...ctx, setCtx }}>
       <main>
         {isAdmin ? (
           <Component {...pageProps} />

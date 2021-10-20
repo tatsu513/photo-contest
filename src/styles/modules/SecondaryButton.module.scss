@@ -11,4 +11,8 @@
   color: $green;
   font-size: 12px;
   text-align: center;
+  @include mq(md) {
+    margin: 0 auto;
+    width: 276px;
+  }
 }

@@ -17,6 +17,10 @@
 }
 .calenderImageBox {
   text-align: center;
+  @include mq(md) {
+    margin: 0 auto 32px;
+    width: 310px;
+  }
 }
 .note {
   position: relative;
@@ -24,4 +28,7 @@
   color: $grey;
   font-size: 12px;
   text-align: center;
+  @include mq(md) {
+    top: -48px;
+  }
 }

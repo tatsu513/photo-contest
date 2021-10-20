@@ -1,18 +1,24 @@
 import styles from "styles/modules/Yushusakuhin.module.scss";
 import Image from "next/image";
 import Ribon from "images/saiyushu_ribon_sp.svg";
-import sectionTitle from "images/section_title02_sp.svg";
+import sectionTitleSp from "images/section_title02_sp.svg";
+import sectionTitleMd from "images/section_title02_md.svg";
 import calenderImage from "images/saiyushu_image_sp.png";
-import naminamiSp from "images/naminami-shiro_sp.svg";
+import { ContextData } from "pages/_app";
+import { useContext } from "react";
 
 const Yushusakuhin = () => {
+  const ctx = useContext(ContextData);
+  const isMd = ctx.windowWidth > 600 && ctx.windowWidth <= 1024;
+
+  const titleImage = isMd ? sectionTitleMd : sectionTitleSp;
   return (
     <div className={styles.yushusakuhinBox}>
       <div className={styles.titleBox}>
         <div className={styles.ribonImage}>
           <Image src={Ribon} alt={"優秀作品は・・・"} />
         </div>
-        <Image src={sectionTitle} alt={"カレンダーとして販売！"} />
+        <Image src={titleImage} alt={"カレンダーとして販売！"} />
       </div>
       <section>
         <p className={styles.text}>
@@ -25,9 +31,7 @@ const Yushusakuhin = () => {
         </div>
         <p className={styles.note}>※画像はイメージです</p>
       </section>
-      <div className="namiBox">
-        <Image src={naminamiSp} alt="" />
-      </div>
+      <div className="namiBox shiro" />
     </div>
   );
 };

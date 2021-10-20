@@ -6,7 +6,6 @@ import insta from "images/insta_color_sp.png";
 import SecondaryButton from "./buttons/SecondaryButton";
 import PrimaryButton from "./buttons/PrimaryButton";
 import TextTitle from "./commons/TextTitle";
-import naminamiSp from "images/naminami-shiro_sp.svg";
 
 const HowToApply = () => {
   return (
@@ -96,9 +95,7 @@ const HowToApply = () => {
           </li>
         </ul>
       </section>
-      <div className="namiBox">
-        <Image src={naminamiSp} alt="" />
-      </div>
+      <div className="namiBox shiro" />
     </div>
   );
 };

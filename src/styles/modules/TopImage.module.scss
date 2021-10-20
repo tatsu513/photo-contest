@@ -19,6 +19,10 @@
   &.bg4 {
     background-image: url("../../images/top_image04.webp");
   }
+
+  @include mq(md) {
+    height: 700px;
+  }
 }
 .image {
   margin: 0 auto;

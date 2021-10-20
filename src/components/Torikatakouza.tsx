@@ -1,7 +1,6 @@
 import styles from "styles/modules/Torikatakouza.module.scss";
 import Image from "next/image";
 import sectionTitle from "images/section_title04_sp.svg";
-import naminamiSp from "images/naminami-midori_sp.svg";
 
 const Torikatakouza = () => {
   return (
@@ -23,9 +22,7 @@ const Torikatakouza = () => {
           <div className={styles.title}>明るさを調整しよう！編</div>
         </div>
       </section>
-      <div className="namiBox">
-        <Image src={naminamiSp} alt="" />
-      </div>
+      <div className="namiBox midori" />
     </div>
   );
 };
