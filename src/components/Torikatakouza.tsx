@@ -8,7 +8,7 @@ const Torikatakouza = () => {
       <div className={styles.titleBox}>
         <Image src={sectionTitle} alt="スマホ写真撮り方講座" />
       </div>
-      <section>
+      <section className={styles.torikataSection}>
         <p className={styles.text}>
           流山市在住の写真家で、本コンテストのアドバイザーでもある
           大塚まゆみさんが、誰でも簡単にマネできる、スマホ写真の撮り方のコツを伝授！
