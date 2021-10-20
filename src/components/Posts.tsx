@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "styles/modules/Posts.module.scss";
 import Image from "next/image";
 import sectionTitle from "images/section_title03_sp.svg";
@@ -5,7 +6,12 @@ import anotherIcon from "images/anotherIcon.svg";
 import PrimaryButton from "./buttons/PrimaryButton";
 import naminamiSp from "images/naminami-midori_sp.svg";
 
-const Posts = () => {
+interface Props {
+  postData: any;
+}
+
+const Posts: React.VFC<Props> = ({ postData }) => {
+  const posts = postData.data;
   return (
     <div className={styles.postsBox}>
       <section className={styles.titleBox}>
@@ -17,26 +23,34 @@ const Posts = () => {
         </p>
         <div className={styles.posts}>
           <ul className={styles.postBox}>
-            {[...Array(4)].map((_, i) => (
+            {posts.map((post, i) => (
               <li key={i} className={styles.post}>
-                <div className={styles.anotherIcon}>
-                  <Image
-                    src={anotherIcon}
-                    alt="別タブでインスタグラムを開く"
-                  />
-                </div>
-                <div className={styles.postImageBox}>
-                  <Image
-                    src={
-                      "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg"
-                    }
-                    alt="サンプル"
-                    width={1000}
-                    height={1000}
-                  />
-                </div>
-                <div className={styles.username}>akemi_kokubo</div>
-                <p className={styles.postText}>おおおおおおおお</p>
+                <Link href={post.permalink}>
+                  <div className={styles.anotherIcon}>
+                    <Image
+                      src={anotherIcon}
+                      alt="別タブでインスタグラムを開く"
+                    />
+                  </div>
+                  <a className={styles.ListItemLink} target="_blank">
+                    <div className={styles.postImageBox}>
+                      <Image
+                        src={
+                          post.media_url
+                            ? post.media_url
+                            : post.children.data[1].media_url
+                        }
+                        alt="サンプル"
+                        width={1000}
+                        height={1000}
+                      />
+                    </div>
+                    <div className={styles.username}>
+                      akemi_kokubo
+                    </div>
+                    <p className={styles.postText}>{post.caption}</p>
+                  </a>
+                </Link>
               </li>
             ))}
           </ul>
