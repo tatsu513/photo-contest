@@ -80,5 +80,14 @@
   text-align: left;
 }
 .notesMain {
+  display: block;
   font-weight: bold;
+  @include mq(md) {
+    display: inline;
+  }
+}
+.spbr {
+  @include mq(md) {
+    display: none;
+  }
 }

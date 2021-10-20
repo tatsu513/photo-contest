@@ -1,4 +1,4 @@
-import styles from "styles/modules/HowToApply.module.scss";
+import styles from "styles/modules/Apply.module.scss";
 import Image from "next/image";
 import flow01 from "images/flow01_sp.svg";
 import flow03 from "images/flow03_sp.svg";
@@ -55,12 +55,12 @@ const HowToApply = () => {
               />
             </div>
             <div className={styles.notes}>
-              <p className={styles.notesMain}>
+              <span className={styles.notesMain}>
                 ※撮影した写真の元データは、優秀作品の結果発表までお手元に保管ください。
-              </p>
-              <p className={styles.notesSub}>
+              </span>
+              <span className={styles.notesSub}>
                 （カレンダーに使用する場合、提出をお願いする可能性があります。）
-              </p>
+              </span>
             </div>
           </li>
           <li className={styles.flow}>
