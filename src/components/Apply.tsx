@@ -12,7 +12,7 @@ const HowToApply = () => {
     <div className={styles.howToApplyBox}>
       <TextTitle text={"応募方法"} />
       <section className={styles.flows}>
-        <ul>
+        <ul className={styles.flowBox}>
           <li className={styles.flow}>
             <div className={styles.step}>
               <div className={styles.stepContent}>
@@ -78,11 +78,6 @@ const HowToApply = () => {
               className={`${styles.flowImage} ${styles.flowImage2}`}
             >
               <Image src={flow03} alt="インスタグラムへ投稿！" />
-            </div>
-            <div className={styles.buttonWrapper}>
-              <SecondaryButton
-                text={"映える！スマホ写真の撮り方はこちら"}
-              />
             </div>
             <div className={styles.notes}>
               <p className={styles.notesMain}>

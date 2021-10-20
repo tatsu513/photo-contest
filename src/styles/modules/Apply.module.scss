@@ -20,12 +20,23 @@
   line-height: 32px;
   text-align: center;
 }
+.flowBox {
+  @include mq(lg) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .flow {
   margin-bottom: 48px;
   padding: 32px;
   width: 100%;
   background-color: $white;
   text-align: center;
+  @include mq(lg) {
+    padding: 20px;
+    width: 32%;
+    margin-bottom: 0;
+  }
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -62,6 +73,9 @@
   margin-bottom: 32px;
   font-size: 18px;
   text-align: center;
+  @include mq(lg) {
+    font-size: 17px;
+  }
 }
 .flowImage {
   height: 148px;

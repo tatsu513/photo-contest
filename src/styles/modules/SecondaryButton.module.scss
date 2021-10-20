@@ -4,6 +4,8 @@
   text-align: center;
 }
 .button {
+  margin: 0 auto;
+  max-width: 276px;
   width: 100%;
   line-height: 48px;
   border: 1px solid $green;
@@ -11,8 +13,4 @@
   color: $green;
   font-size: 12px;
   text-align: center;
-  @include mq(md) {
-    margin: 0 auto;
-    width: 276px;
-  }
 }
