@@ -27,6 +27,10 @@ section {
     margin: 0 auto;
     width: 536px;
   }
+  @include mq(lg) {
+    margin: 0 auto;
+    width: 948px;
+  }
 }
 
 .circleWrapper {
