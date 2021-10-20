@@ -8,11 +8,13 @@ import styles from "styles/modules/TopImage.module.scss";
 import Image from "next/image";
 import topImageSp from "images/top_image_sp.svg";
 import topImageMd from "images/top_image_md.svg";
+import topImageLg from "images/top_image_lg.svg";
 import { ContextData } from "pages/_app";
 
 const TopImage = () => {
   const ctx = useContext(ContextData);
   const isMd = ctx.windowWidth > 600 && ctx.windowWidth <= 1024;
+  const isLg = ctx.windowWidth > 1025;
 
   const [currentImage, setCurrentImage] = useState(1);
   const bgClassName = useCallback(() => {
@@ -28,7 +30,11 @@ const TopImage = () => {
     }
   }, [currentImage]);
 
-  const titleImage = isMd ? topImageMd : topImageSp;
+  const titleImage = isMd
+    ? topImageMd
+    : isLg
+    ? topImageLg
+    : topImageSp;
 
   useEffect(() => {
     const interval = setInterval(() => {
