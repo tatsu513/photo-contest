@@ -1,0 +1,79 @@
+@import "../common.scss";
+
+.boshuyoukouBox {
+  padding-top: 56px;
+  background-color: $light-green;
+}
+.contents {
+  display: flex;
+  margin: 0 auto;
+  width: 900px;
+
+  .content {
+    width: 48%;
+    margin-right: 4%;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+.body {
+  padding: 24px 8px 56px;
+  &.bodyTop {
+    padding-bottom: 0;
+  }
+}
+.listItemBox {
+  margin-bottom: 32px;
+}
+.listItem {
+  margin-bottom: 4px;
+  &.listItemMain {
+    margin-bottom: 32px;
+    font-weight: bold;
+  }
+  &.ListItemLink {
+    cursor: pointer;
+  }
+}
+.listItemLabel {
+  font-weight: normal;
+}
+.ListItemLink {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.adviserPhoto {
+  height: 260px;
+  width: 260px;
+  margin: 0 auto 24px;
+  border-radius: 130px;
+  overflow: hidden;
+}
+.profile {
+  margin-bottom: 16px;
+}
+.prfileName {
+  font-size: 20px;
+}
+.adviserInstaIcon {
+  margin-left: 8px;
+  cursor: pointer;
+}
+.message {
+  padding: 20px 16px 16px;
+  position: relative;
+  border: 1px solid $black;
+  border-radius: 10px;
+  &::before {
+    content: "メッセージ";
+    padding: 0 8px;
+    position: absolute;
+    top: -14px;
+    left: 16px;
+    font-size: 18px;
+    font-family: "Kaisei Opti", serif;
+    background-color: $light-green;
+  }
+}
