@@ -1,3 +1,4 @@
+@import "./common.scss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap");
 
 html,
@@ -21,6 +22,15 @@ main {
 section {
   padding: 0 24px;
   width: 100%;
+
+  @include mq(md) {
+    margin: 0 auto;
+    width: 536px;
+  }
+  @include mq(lg) {
+    margin: 0 auto;
+    width: 948px;
+  }
 }
 
 .circleWrapper {
@@ -30,6 +40,7 @@ section {
   left: 0;
 }
 .namiBox {
+  height: 34px;
   width: 101%;
   position: absolute;
   top: auto;
@@ -38,4 +49,10 @@ section {
   left: 50%;
   transform: translateX(-50%);
   font-size: 0;
+  &.shiro {
+    background-image: url("../images/naminami-shiro_sp.svg");
+  }
+  &.midori {
+    background-image: url("../images/naminami-midori_sp.svg");
+  }
 }

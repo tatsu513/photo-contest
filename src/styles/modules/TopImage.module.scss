@@ -19,6 +19,13 @@
   &.bg4 {
     background-image: url("../../images/top_image04.webp");
   }
+
+  @include mq(md) {
+    height: 700px;
+  }
+  @include mq(lg) {
+    height: 80vh;
+  }
 }
 .image {
   margin: 0 auto;
@@ -29,6 +36,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  @include mq(lg) {
+    height: 70vh;
+    max-width: 75vh;
+    padding-top: 20px;
+    // position: relative;
+  }
 }
 .photographer {
   position: absolute;

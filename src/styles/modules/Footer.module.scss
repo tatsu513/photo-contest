@@ -5,6 +5,10 @@
   font-size: 0;
   text-align: center;
 }
+.footerImage {
+  height: 48px;
+  background-image: url("../../images/footer_image_sp.svg");
+}
 .footerContent {
   padding: 16px;
   width: 100%;
@@ -16,6 +20,6 @@
   font-size: 10px;
 }
 .logoBox {
-  margin: 0 auto;
   width: 118px;
+  margin: 0 auto;
 }

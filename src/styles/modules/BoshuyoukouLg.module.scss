@@ -6,15 +6,23 @@
 }
 .contents {
   display: flex;
-  section {
-    @include mq(lg) {
-      padding-left: 0;
-      padding-right: 0;
+  margin: 0 auto;
+  width: 900px;
+
+  .content {
+    width: 48%;
+    margin-right: 4%;
+
+    &:last-of-type {
+      margin-right: 0;
     }
   }
 }
 .body {
   padding: 24px 8px 56px;
+  &.bodyTop {
+    padding-bottom: 0;
+  }
 }
 .listItemBox {
   margin-bottom: 32px;

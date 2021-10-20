@@ -1,7 +1,6 @@
 import styles from "styles/modules/Torikatakouza.module.scss";
 import Image from "next/image";
 import sectionTitle from "images/section_title04_sp.svg";
-import naminamiSp from "images/naminami-midori_sp.svg";
 
 const Torikatakouza = () => {
   return (
@@ -9,7 +8,7 @@ const Torikatakouza = () => {
       <div className={styles.titleBox}>
         <Image src={sectionTitle} alt="スマホ写真撮り方講座" />
       </div>
-      <section>
+      <section className={styles.torikataSection}>
         <p className={styles.text}>
           流山市在住の写真家で、本コンテストのアドバイザーでもある
           大塚まゆみさんが、誰でも簡単にマネできる、スマホ写真の撮り方のコツを伝授！
@@ -23,9 +22,7 @@ const Torikatakouza = () => {
           <div className={styles.title}>明るさを調整しよう！編</div>
         </div>
       </section>
-      <div className="namiBox">
-        <Image src={naminamiSp} alt="" />
-      </div>
+      <div className="namiBox midori" />
     </div>
   );
 };

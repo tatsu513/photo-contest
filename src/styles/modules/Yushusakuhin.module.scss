@@ -12,11 +12,31 @@
 .ribonImage {
   margin-bottom: 24px;
 }
+.contents {
+  @include mq(lg) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+}
 .text {
   margin-bottom: 24px;
+  @include mq(lg) {
+    width: 520px;
+  }
 }
 .calenderImageBox {
   text-align: center;
+  @include mq(md) {
+    margin: 0 auto 32px;
+    width: 310px;
+  }
+  @include mq(lg) {
+    margin: 0;
+    width: 348px;
+  }
 }
 .note {
   position: relative;
@@ -24,4 +44,10 @@
   color: $grey;
   font-size: 12px;
   text-align: center;
+  @include mq(md) {
+    top: -48px;
+  }
+  @include mq(md) {
+    top: -32px;
+  }
 }

@@ -45,7 +45,6 @@ const Boshuyoukou = () => {
               ※過去に撮影した写真も投稿可能です。
             </li>
           </ul>
-          <PrimaryButton text={"【応募規約】必ずお読みください"} />
         </div>
       </section>
       <section>

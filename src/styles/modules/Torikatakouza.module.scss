@@ -8,6 +8,11 @@
   margin-bottom: 40px;
   text-align: center;
 }
+.torikataSection {
+  @include mq(lg) {
+    width: 800px;
+  }
+}
 .text {
   margin-bottom: 48px;
 }
