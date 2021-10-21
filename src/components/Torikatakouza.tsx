@@ -1,6 +1,7 @@
 import styles from "styles/modules/Torikatakouza.module.scss";
 import Image from "next/image";
 import sectionTitle from "images/section_title04_sp.svg";
+import YouTube from "react-youtube";
 
 const Torikatakouza = () => {
   return (
@@ -14,11 +15,23 @@ const Torikatakouza = () => {
           大塚まゆみさんが、誰でも簡単にマネできる、スマホ写真の撮り方のコツを伝授！
         </p>
         <div className={styles.youtubeContent}>
-          <div className={styles.movie} />
+          <div className={styles.movie}>
+            <YouTube
+              videoId="drvH4XbZoPs"
+              className={styles.iframe}
+              containerClassName={styles.youtube}
+            />
+          </div>
           <div className={styles.title}>主役を決めよう！編</div>
         </div>
         <div className={styles.youtubeContent}>
-          <div className={styles.movie} />
+          <div className={styles.movie}>
+            <YouTube
+              videoId="409xx9r5NQ0"
+              className={styles.iframe}
+              containerClassName={styles.youtube}
+            />
+          </div>
           <div className={styles.title}>明るさを調整しよう！編</div>
         </div>
       </section>
