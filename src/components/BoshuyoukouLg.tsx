@@ -95,7 +95,14 @@ const BoshuyoukouLg: React.VFC<Props> = ({ onClick, goApply }) => {
                   優秀作品は、以下の流山ツーリズムデザインWEBサイトで発表予定です。
                 </li>
                 <li className={styles.listItem}>
-                  https://nagareyama-td.com/
+                  <Link href="https://nagareyama-td.com/">
+                    <a
+                      className={styles.ListItemLink}
+                      target="_blank"
+                    >
+                      https://nagareyama-td.com/
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -123,7 +130,16 @@ const BoshuyoukouLg: React.VFC<Props> = ({ onClick, goApply }) => {
                 <li className={styles.listItem}>
                   本キャンペーンに関するお問い合わせは、流山ツーリズムデザイン公式Instagramのダイレクトメッセージ（DM）機能よりお願いします。
                 </li>
-                <li className={styles.listItem}>@nagareyama_td</li>
+                <li className={styles.listItem}>
+                  <Link href="https://www.instagram.com/nagareyama_td/">
+                    <a
+                      className={styles.ListItemLink}
+                      target="_blank"
+                    >
+                      @nagareyama_td
+                    </a>
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
