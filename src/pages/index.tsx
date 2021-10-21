@@ -34,6 +34,12 @@ const IndexPage = () => {
       behavior: "smooth",
     });
   };
+  const goTorikata = () => {
+    const target = document.getElementById("torikata");
+    target.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <Head>
@@ -43,7 +49,7 @@ const IndexPage = () => {
       <Ichioshi goApply={goApply} />
       <Yushusakuhin />
       <Posts />
-      <HowToApply />
+      <HowToApply goTorikata={goTorikata} />
       <Torikatakouza />
       {isLg ? (
         <BoshuyoukouLg />

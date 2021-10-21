@@ -4,7 +4,7 @@ import sectionTitle from "images/section_title04_sp.svg";
 
 const Torikatakouza = () => {
   return (
-    <div className={styles.torikatakouzaBox}>
+    <div className={styles.torikatakouzaBox} id="torikata">
       <div className={styles.titleBox}>
         <Image src={sectionTitle} alt="スマホ写真撮り方講座" />
       </div>

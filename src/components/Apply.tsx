@@ -7,7 +7,11 @@ import SecondaryButton from "./buttons/SecondaryButton";
 import PrimaryButton from "./buttons/PrimaryButton";
 import TextTitle from "./commons/TextTitle";
 
-const HowToApply = () => {
+interface Props {
+  goTorikata: () => void;
+}
+
+const HowToApply: React.VFC<Props> = ({ goTorikata }) => {
   return (
     <div className={styles.howToApplyBox} id="apply">
       <TextTitle text={"応募方法"} />
@@ -60,6 +64,7 @@ const HowToApply = () => {
             <div className={styles.buttonWrapper}>
               <SecondaryButton
                 text={"映える！スマホ写真の撮り方はこちら"}
+                onClick={goTorikata}
               />
             </div>
             <div className={styles.notes}>
