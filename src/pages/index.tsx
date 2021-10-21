@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Head from "next/head";
 import TopImage from "@/components/TopImage";
 import Ichioshi from "@/components/Ichioshi";
@@ -29,18 +28,28 @@ const IndexPage = () => {
     body.classList.remove("isFixed");
     setIsOpenroules(false);
   };
+  const goApply = () => {
+    const target = document.getElementById("apply");
+    target.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <Head>
         <title>流山カレンダーフォトコンテスト</title>
       </Head>
       <TopImage />
-      <Ichioshi />
+      <Ichioshi goApply={goApply} />
       <Yushusakuhin />
       <Posts />
       <HowToApply />
       <Torikatakouza />
-      {isLg ? <BoshuyoukouLg /> : <Boshuyoukou onClick={openRules} />}
+      {isLg ? (
+        <BoshuyoukouLg />
+      ) : (
+        <Boshuyoukou onClick={openRules} goApply={goApply} />
+      )}
       <Footer />
       <div
         className={`${styles.rulesWrapper} ${

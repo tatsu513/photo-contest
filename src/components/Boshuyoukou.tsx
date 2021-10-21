@@ -10,9 +10,10 @@ import Instagram from "images/Instagram.svg";
 
 interface Props {
   onClick: () => void;
+  goApply: () => void;
 }
 
-const Boshuyoukou: React.VFC<Props> = ({ onClick }) => {
+const Boshuyoukou: React.VFC<Props> = ({ onClick, goApply }) => {
   return (
     <div className={styles.boshuyoukouBox}>
       <TextTitle text={"募集要項"} />
@@ -87,7 +88,10 @@ const Boshuyoukou: React.VFC<Props> = ({ onClick }) => {
       <section>
         <Essentials text={"応募方法"} />
         <div className={styles.body}>
-          <SecondaryButton text={"応募方法はこちら"} />
+          <SecondaryButton
+            text={"応募方法はこちら"}
+            onClick={goApply}
+          />
         </div>
       </section>
       <section>

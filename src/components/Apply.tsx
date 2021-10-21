@@ -9,7 +9,7 @@ import TextTitle from "./commons/TextTitle";
 
 const HowToApply = () => {
   return (
-    <div className={styles.howToApplyBox}>
+    <div className={styles.howToApplyBox} id="apply">
       <TextTitle text={"応募方法"} />
       <section className={styles.flows}>
         <ul className={styles.flowBox}>
