@@ -7,8 +7,13 @@ import shotImage from "images/to_shot_image_sp.png";
 import PrimaryButton from "./buttons/PrimaryButton";
 import { ContextData } from "pages/_app";
 import { useContext } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const Ichioshi = () => {
+interface Props {
+  goApply: () => void;
+}
+
+const Ichioshi: React.VFC<Props> = ({ goApply }) => {
   const ctx = useContext(ContextData);
   const isMd = ctx.windowWidth > 600 && ctx.windowWidth <= 1024;
   const isLg = ctx.windowWidth > 1024;
@@ -35,7 +40,7 @@ const Ichioshi = () => {
             <Image src={shotImage} alt="風景を撮影" />
           </div>
         </div>
-        <PrimaryButton text={"応募方法はこちら"} />
+        <PrimaryButton text={"応募方法はこちら"} onClick={goApply} />
       </section>
       <div className="namiBox midori" />
     </div>

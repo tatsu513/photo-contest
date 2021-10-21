@@ -8,7 +8,12 @@ import TextTitle from "./commons/TextTitle";
 import Mayumiotsuka from "images/mayumiotsukaprofile_sp.png";
 import Instagram from "images/Instagram.svg";
 
-const Boshuyoukou = () => {
+interface Props {
+  onClick: () => void;
+  goApply: () => void;
+}
+
+const Boshuyoukou: React.VFC<Props> = ({ onClick, goApply }) => {
   return (
     <div className={styles.boshuyoukouBox}>
       <TextTitle text={"募集要項"} />
@@ -26,7 +31,10 @@ const Boshuyoukou = () => {
               ・撮影した写真の元データは、優秀作品の結果発表までお手元に保管ください。（カレンダーに使用する場合、提出をお願いする可能性があります。）
             </li>
           </ul>
-          <PrimaryButton text={"【応募規約】必ずお読みください"} />
+          <PrimaryButton
+            text={"【応募規約】必ずお読みください"}
+            onClick={onClick}
+          />
         </div>
       </section>
       <section>
@@ -72,7 +80,13 @@ const Boshuyoukou = () => {
               優秀作品は、以下の流山ツーリズムデザインWEBサイトで発表予定です。
             </li>
             <li className={styles.listItem}>
-              https://nagareyama-td.com/
+              <li className={styles.listItem}>
+                <Link href="https://nagareyama-td.com/">
+                  <a className={styles.ListItemLink} target="_blank">
+                    https://nagareyama-td.com/
+                  </a>
+                </Link>
+              </li>
             </li>
           </ul>
         </div>
@@ -80,7 +94,10 @@ const Boshuyoukou = () => {
       <section>
         <Essentials text={"応募方法"} />
         <div className={styles.body}>
-          <SecondaryButton text={"応募方法はこちら"} />
+          <SecondaryButton
+            text={"応募方法はこちら"}
+            onClick={goApply}
+          />
         </div>
       </section>
       <section>
@@ -108,9 +125,13 @@ const Boshuyoukou = () => {
           <div className={styles.profile}>
             <h3 className={styles.prfileName}>
               大塚まゆみ
-              <span className={styles.adviserInstaIcon}>
-                <Image src={Instagram} alt="インスタグラム" />
-              </span>
+              <Link href="https://www.instagram.com/mayumi_works/">
+                <a target="_blank">
+                  <span className={styles.adviserInstaIcon}>
+                    <Image src={Instagram} alt="インスタグラム" />
+                  </span>
+                </a>
+              </Link>
             </h3>
             <span className={styles.profileJob}>
               フォトグラファー（流山市在住）
@@ -156,7 +177,13 @@ const Boshuyoukou = () => {
             <li className={styles.listItem}>
               本キャンペーンに関するお問い合わせは、流山ツーリズムデザイン公式Instagramのダイレクトメッセージ（DM）機能よりお願いします。
             </li>
-            <li className={styles.listItem}>@nagareyama_td</li>
+            <li className={styles.listItem}>
+              <Link href="https://www.instagram.com/nagareyama_td/">
+                <a className={styles.ListItemLink} target="_blank">
+                  @nagareyama_td
+                </a>
+              </Link>
+            </li>
           </ul>
         </div>
       </section>

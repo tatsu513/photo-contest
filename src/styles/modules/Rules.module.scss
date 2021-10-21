@@ -1,0 +1,63 @@
+@import "../common.scss";
+
+.rulesBox {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+.closeButton {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  bottom: auto;
+  left: auto;
+  background-color: #070707;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 100;
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 20px;
+    transform: rotate(45deg);
+    background-color: $white;
+    position: absolute;
+    top: 18px;
+    left: 10px;
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 20px;
+    transform: rotate(-45deg);
+    background-color: $white;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+  }
+}
+.rulesContents {
+  height: calc(100vh - 20px);
+  padding: 40px 24px;
+  background-color: $white;
+  overflow: auto;
+}
+.title {
+  margin-bottom: 24px;
+  font-size: 20px;
+  text-align: center;
+}
+.leadText {
+  margin-bottom: 32px;
+}
+.sectionTitle {
+  font-weight: bold;
+}
+.text {
+  margin-bottom: 24px;
+}
