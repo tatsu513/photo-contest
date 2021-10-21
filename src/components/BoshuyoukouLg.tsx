@@ -8,7 +8,12 @@ import TextTitle from "./commons/TextTitle";
 import Mayumiotsuka from "images/mayumiotsukaprofile_sp.png";
 import Instagram from "images/Instagram.svg";
 
-const BoshuyoukouLg = () => {
+interface Props {
+  onClick: () => void;
+  goApply: () => void;
+}
+
+const BoshuyoukouLg: React.VFC<Props> = ({ onClick, goApply }) => {
   return (
     <div className={styles.boshuyoukouBox}>
       <TextTitle text={"募集要項"} />
@@ -27,7 +32,10 @@ const BoshuyoukouLg = () => {
                 ・撮影した写真の元データは、優秀作品の結果発表までお手元に保管ください。（カレンダーに使用する場合、提出をお願いする可能性があります。）
               </li>
             </ul>
-            <PrimaryButton text={"【応募規約】必ずお読みください"} />
+            <PrimaryButton
+              text={"【応募規約】必ずお読みください"}
+              onClick={onClick}
+            />
           </div>
         </div>
         <div className={styles.content}>
@@ -50,7 +58,10 @@ const BoshuyoukouLg = () => {
           <div>
             <Essentials text={"応募方法"} />
             <div className={styles.body}>
-              <SecondaryButton text={"応募方法はこちら"} />
+              <SecondaryButton
+                text={"応募方法はこちら"}
+                onClick={goApply}
+              />
             </div>
           </div>
         </div>

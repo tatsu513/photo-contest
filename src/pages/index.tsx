@@ -52,7 +52,7 @@ const IndexPage = () => {
       <HowToApply goTorikata={goTorikata} />
       <Torikatakouza />
       {isLg ? (
-        <BoshuyoukouLg />
+        <BoshuyoukouLg onClick={openRules} goApply={goApply} />
       ) : (
         <Boshuyoukou onClick={openRules} goApply={goApply} />
       )}
