@@ -119,9 +119,13 @@ const Boshuyoukou: React.VFC<Props> = ({ onClick, goApply }) => {
           <div className={styles.profile}>
             <h3 className={styles.prfileName}>
               大塚まゆみ
-              <span className={styles.adviserInstaIcon}>
-                <Image src={Instagram} alt="インスタグラム" />
-              </span>
+              <Link href="https://www.instagram.com/mayumi_works/">
+                <a target="_blank">
+                  <span className={styles.adviserInstaIcon}>
+                    <Image src={Instagram} alt="インスタグラム" />
+                  </span>
+                </a>
+              </Link>
             </h3>
             <span className={styles.profileJob}>
               フォトグラファー（流山市在住）
