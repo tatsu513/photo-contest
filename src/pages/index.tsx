@@ -62,7 +62,7 @@ const IndexPage = () => {
           isOpenRules && styles.isOpen
         }`}
       >
-        {isOpenRules && <Rules onClick={closeRules} />}
+        <Rules onClick={closeRules} />
       </div>
     </>
   );
