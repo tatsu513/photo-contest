@@ -10,6 +10,13 @@ body {
   line-height: 1.7;
 }
 
+body {
+  overflow-y: auto;
+  &.isFixed {
+    overflow-y: hidden;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
