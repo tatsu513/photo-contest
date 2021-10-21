@@ -34,8 +34,9 @@ const Posts = () => {
                     height={1000}
                   />
                 </div>
-                <div className={styles.username}>akemi_kokubo</div>
-                <p className={styles.postText}>おおおおおおおお</p>
+                <p className={styles.postText}>
+                  １２３４５６７８９０１２３４５６７８９０１２３４５６７８９０
+                </p>
               </li>
             ))}
           </ul>

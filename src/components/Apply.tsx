@@ -29,7 +29,15 @@ const HowToApply = () => {
               <Image src={insta} alt="インスタグラム" />
             </div>
             <div className={styles.buttonWrapper}>
-              <PrimaryButton text={"公式アカウントをフォロー"} />
+              <PrimaryButton
+                text={"公式アカウントをフォロー"}
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/nagareyama_td/",
+                    "_blank"
+                  )
+                }
+              />
             </div>
           </li>
           <li className={styles.flow}>

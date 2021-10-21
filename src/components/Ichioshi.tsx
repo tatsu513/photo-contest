@@ -7,6 +7,7 @@ import shotImage from "images/to_shot_image_sp.png";
 import PrimaryButton from "./buttons/PrimaryButton";
 import { ContextData } from "pages/_app";
 import { useContext } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Ichioshi = () => {
   const ctx = useContext(ContextData);
@@ -35,7 +36,10 @@ const Ichioshi = () => {
             <Image src={shotImage} alt="風景を撮影" />
           </div>
         </div>
-        <PrimaryButton text={"応募方法はこちら"} />
+        <PrimaryButton
+          text={"応募方法はこちら"}
+          onClick={() => alert("おおおおお")}
+        />
       </section>
       <div className="namiBox midori" />
     </div>
