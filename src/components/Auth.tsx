@@ -15,7 +15,7 @@ const Auth: React.VFC<Props> = (props) => {
         className={styles.input}
         type="text"
         name="username"
-        placeholder="user"
+        placeholder="id"
         value={props.username}
         onChange={(event) => props.onChange(event)}
       />
