@@ -43,9 +43,9 @@ const IndexPage = () => {
   return (
     <>
       <Head>
-        <title>流山カレンダーフォトコンテスト</title>
+        <title>予告 流山カレンダーフォトコンテスト開催！</title>
       </Head>
-      <TopImage />
+      {/* <TopImage />
       <Ichioshi goApply={goApply} />
       <Yushusakuhin />
       <Posts />
@@ -63,6 +63,30 @@ const IndexPage = () => {
         }`}
       >
         <Rules onClick={closeRules} />
+      </div> */}
+      <div className={styles.teaserWrap}>
+        <header className={styles.header}>
+          <div id={styles.logo}>
+            <img
+              src="/images/teaser-title.svg"
+              alt="nagareyama photo contest comming soon"
+            />
+          </div>
+        </header>
+
+        <footer className={styles.footer}>
+          <small>
+            &copy;{" "}
+            <a
+              className={styles.footerLink}
+              href="https://nagareyama-td.com/"
+              target="_blank"
+            >
+              流山ツーリズムデザイン
+            </a>{" "}
+            All Rights Reserved.
+          </small>
+        </footer>
       </div>
     </>
   );
