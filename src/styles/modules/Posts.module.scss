@@ -32,6 +32,12 @@
     justify-content: center;
   }
 }
+.posts {
+  @include mq(lg) {
+    max-width: calc(1200px + 7%);
+    margin: 0 auto;
+  }
+}
 .post {
   margin-right: 6%;
   margin-bottom: 48px;
