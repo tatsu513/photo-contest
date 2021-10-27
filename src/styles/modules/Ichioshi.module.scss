@@ -2,7 +2,10 @@
 
 .ichioshiBox {
   position: relative;
-  padding: 40px 0 64px;
+  padding: 56px 0 96px;
+  @include mq(lg) {
+    padding: 80px 0 96px;
+  }
 }
 .title {
   margin: 0 auto 40px;

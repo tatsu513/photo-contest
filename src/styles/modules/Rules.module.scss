@@ -5,6 +5,10 @@
   width: 100%;
   padding: 20px;
   position: relative;
+  @include mq(lg) {
+    width: 900px;
+    margin: 0 auto;
+  }
 }
 .closeButton {
   height: 40px;
@@ -46,6 +50,12 @@
   padding: 40px 24px;
   background-color: $white;
   overflow: auto;
+  @include mq(md) {
+    padding: 40px 56px;
+  }
+  @include mq(lg) {
+    padding: 40px;
+  }
 }
 .title {
   margin-bottom: 24px;
