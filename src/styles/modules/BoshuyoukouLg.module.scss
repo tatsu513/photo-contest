@@ -1,8 +1,11 @@
 @import "../common.scss";
 
 .boshuyoukouBox {
-  padding-top: 56px;
+  padding: 56px 0 96px;
   background-color: $light-green;
+  @include mq(lg) {
+    padding: 80px 0 96px;
+  }
 }
 .contents {
   display: flex;

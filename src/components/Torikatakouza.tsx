@@ -1,13 +1,26 @@
 import styles from "styles/modules/Torikatakouza.module.scss";
 import Image from "next/image";
 import sectionTitle from "images/section_title04_sp.svg";
+import sectionTitleMd from "images/section_title04_md.svg";
+import sectionTitleLg from "images/section_title04_lg.svg";
 import YouTube from "react-youtube";
+import { ContextData } from "pages/_app";
+import { useContext } from "react";
 
 const Torikatakouza = () => {
+  const ctx = useContext(ContextData);
+  const isMd = ctx.windowWidth > 600 && ctx.windowWidth <= 1024;
+  const isLg = ctx.windowWidth > 1024;
+
+  const titleImage = isMd
+    ? sectionTitleMd
+    : isLg
+    ? sectionTitleLg
+    : sectionTitle;
   return (
     <div className={styles.torikatakouzaBox} id="torikata">
       <div className={styles.titleBox}>
-        <Image src={sectionTitle} alt="スマホ写真撮り方講座" />
+        <Image src={titleImage} alt="スマホ写真撮り方講座" />
       </div>
       <section className={styles.torikataSection}>
         <p className={styles.text}>

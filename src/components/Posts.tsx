@@ -1,11 +1,24 @@
 import styles from "styles/modules/Posts.module.scss";
 import Image from "next/image";
 import sectionTitle from "images/section_title03_sp.svg";
+import sectionTitleMd from "images/section_title03_md.svg";
+import sectionTitleLg from "images/section_title03_lg.svg";
 import anotherIcon from "images/anotherIcon.svg";
 import PrimaryButton from "./buttons/PrimaryButton";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ContextData } from "pages/_app";
 
 const Posts = () => {
+  const ctx = useContext(ContextData);
+  const isMd = ctx.windowWidth > 600 && ctx.windowWidth <= 1024;
+  const isLg = ctx.windowWidth > 1024;
+
+  const titleImage = isMd
+    ? sectionTitleMd
+    : isLg
+    ? sectionTitleLg
+    : sectionTitle;
+
   const [showNum, setShowNum] = useState(6);
   const addShowNum = () => setShowNum((prevState) => prevState + 6);
 
@@ -69,7 +82,7 @@ const Posts = () => {
   return (
     <div className={styles.postsBox}>
       <section className={styles.titleBox}>
-        <Image src={sectionTitle} alt={"皆さまの投稿作品"} />
+        <Image src={titleImage} alt={"皆さまの投稿作品"} />
       </section>
       <section className={styles.postSection}>
         <p className={styles.text}>
