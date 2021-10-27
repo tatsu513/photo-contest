@@ -41,10 +41,9 @@
     top: 50%;
   }
   @include mq(lg) {
-    height: 70vh;
+    height: 80vh;
     max-width: 75vh;
     padding-top: 20px;
-    // position: relative;
   }
 }
 .photographer {

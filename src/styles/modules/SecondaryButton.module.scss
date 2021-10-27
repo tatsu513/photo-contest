@@ -8,9 +8,17 @@
   max-width: 276px;
   width: 100%;
   line-height: 48px;
+  background-color: transparent;
   border: 1px solid $green;
   border-radius: 4px;
   color: $green;
   font-size: 12px;
   text-align: center;
+  transition: all 300ms ease;
+  &:hover {
+    background-color: $light-green;
+  }
+  &:active {
+    background-color: $light-green;
+  }
 }

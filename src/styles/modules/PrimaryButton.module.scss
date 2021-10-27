@@ -13,4 +13,11 @@
   color: $white;
   font-size: 12px;
   text-align: center;
+  transition: all 300ms ease;
+  &:hover {
+    background-color: $green-dark;
+  }
+  &:active {
+    background-color: $green-dark;
+  }
 }
