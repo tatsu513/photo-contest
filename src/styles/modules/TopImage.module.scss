@@ -30,9 +30,8 @@
     top: 50%;
   }
   @include mq(lg) {
-    height: 80vh;
-    max-width: 82vh;
-    padding-top: 20px;
+    height: 92vh;
+    max-width: 92vh;
   }
 }
 .photographer {
@@ -62,7 +61,13 @@
     opacity: 1;
   }
   & > div {
-    max-width: 105% !important;
-    width: 105%;
+    max-width: 400% !important;
+    width: 400%;
+    left: -182%;
+    @include mq(md) {
+      max-width: 105% !important;
+      width: 105%;
+      left: 0;
+    }
   }
 }
