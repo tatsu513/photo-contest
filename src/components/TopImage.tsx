@@ -21,11 +21,6 @@ const TopImage = () => {
   const isMd = ctx.windowWidth > 600 && ctx.windowWidth <= 1024;
   const isLg = ctx.windowWidth > 1025;
 
-  const image1Ref = useRef(null);
-  const image2Ref = useRef(null);
-  const image3Ref = useRef(null);
-  const image4Ref = useRef(null);
-
   const [currentImage, setCurrentImage] = useState(1);
   const bgClassName = (num: number): boolean => {
     return num === currentImage;
@@ -54,7 +49,6 @@ const TopImage = () => {
           className={`${styles.bgItem} ${
             bgClassName(1) && styles.isActive
           }`}
-          ref={image1Ref}
         >
           <Image src={bgImage01} alt="背景01" />
         </li>
@@ -62,7 +56,6 @@ const TopImage = () => {
           className={`${styles.bgItem} ${
             bgClassName(2) && styles.isActive
           }`}
-          ref={image2Ref}
         >
           <Image src={bgImage02} alt="背景02" />
         </li>
@@ -70,7 +63,6 @@ const TopImage = () => {
           className={`${styles.bgItem} ${
             bgClassName(3) && styles.isActive
           }`}
-          ref={image3Ref}
         >
           <Image src={bgImage03} alt="背景03" />
         </li>
@@ -78,7 +70,6 @@ const TopImage = () => {
           className={`${styles.bgItem} ${
             bgClassName(4) && styles.isActive
           }`}
-          ref={image4Ref}
         >
           <Image src={bgImage04} alt="背景04" />
         </li>
