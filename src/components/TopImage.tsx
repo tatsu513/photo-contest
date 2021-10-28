@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "styles/modules/TopImage.module.scss";
 import Image from "next/image";
 import topImageSp from "images/top_image_sp.svg";
