@@ -5,7 +5,7 @@ import PrimaryButton from "./buttons/PrimaryButton";
 import SecondaryButton from "./buttons/SecondaryButton";
 import Essentials from "./commons/Essentials";
 import TextTitle from "./commons/TextTitle";
-import Mayumiotsuka from "images/mayumiotsukaprofile_sp.png";
+import Mayumiotsuka from "images/mayumiotsukaprofile_sp.jpg";
 import Instagram from "images/Instagram.svg";
 
 interface Props {
