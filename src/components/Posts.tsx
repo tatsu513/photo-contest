@@ -89,7 +89,11 @@ const Posts = () => {
           Instagramに投稿された作品から、ピックアップしてご紹介！
         </p>
         <div className={styles.posts}>
-          <ul className={styles.postBox}>
+          <ul
+            className={`${styles.postBox} ${
+              customData.length % 3 === 2 && styles.remainder
+            }`}
+          >
             {customData.map((dammy, i) => (
               <li key={i} className={styles.post}>
                 <div className={styles.anotherIcon}>

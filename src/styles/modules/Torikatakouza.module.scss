@@ -13,13 +13,14 @@
 }
 .torikataSection {
   @include mq(md) {
-    width: 848px;
+    width: 100%;
+    max-width: 848px;
   }
 }
 .text {
   margin-bottom: 48px;
   @include mq(lg) {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 .youtubeContent {

@@ -29,7 +29,16 @@
   display: flex;
   flex-wrap: wrap;
   @include mq(lg) {
-    justify-content: center;
+    justify-content: space-between;
+  }
+  &.remainder {
+    &::after {
+      @include mq(lg) {
+        content: "";
+        width: 31%;
+        max-width: 400px;
+      }
+    }
   }
 }
 .posts {

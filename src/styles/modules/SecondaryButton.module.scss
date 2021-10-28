@@ -17,8 +17,7 @@
   transition: all 300ms ease;
   &:hover {
     background-color: $light-green;
-  }
-  &:active {
-    background-color: $light-green;
+    border: 1px solid $green-dark;
+    color: $green-dark;
   }
 }
