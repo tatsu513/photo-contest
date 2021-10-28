@@ -32,7 +32,7 @@ const Yushusakuhin = () => {
           <p className={styles.text}>
             審査の結果、優秀作品に選ばれた投稿作品は、2022年4月始まりのカレンダーとしてまとめて、流山市内で販売します。
             <br />
-            また、流山市
+            また、
             <Link href="https://nagareyama-td.com/reimei/">
               <a target="_blank" className="a-link">
                 「杜のアトリエ黎明」
