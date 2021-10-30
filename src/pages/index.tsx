@@ -8,10 +8,11 @@ import Torikatakouza from "@/components/Torikatakouza";
 import Boshuyoukou from "@/components/Boshuyoukou";
 import Footer from "@/components/Footer";
 import { ContextData } from "./_app";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import BoshuyoukouLg from "@/components/BoshuyoukouLg";
 import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
+import smoothscroll from "smoothscroll-polyfill";
 
 const IndexPage = () => {
   const ctx = useContext(ContextData);
@@ -40,6 +41,9 @@ const IndexPage = () => {
       behavior: "smooth",
     });
   };
+  useEffect(() => {
+    smoothscroll.polyfill();
+  }, []);
   return (
     <>
       <Head>
