@@ -67,13 +67,13 @@ section {
   font-size: 0;
   &.shiro {
     background-image: url("../images/naminami-shiro-sp.svg");
-    @include mq(lg) {
+    @include mq(md) {
       background-image: url("../images/naminami-shiro-lg.svg");
     }
   }
   &.midori {
     background-image: url("../images/naminami-midori-sp.svg");
-    @include mq(lg) {
+    @include mq(md) {
       background-image: url("../images/naminami-midori-lg.svg");
     }
   }
