@@ -66,9 +66,15 @@ section {
   transform: translateX(-50%);
   font-size: 0;
   &.shiro {
-    background-image: url("../images/naminami-shiro_sp.svg");
+    background-image: url("../images/naminami-shiro-sp.svg");
+    @include mq(lg) {
+      background-image: url("../images/naminami-shiro-lg.svg");
+    }
   }
   &.midori {
-    background-image: url("../images/naminami-midori_sp.svg");
+    background-image: url("../images/naminami-midori-sp.svg");
+    @include mq(lg) {
+      background-image: url("../images/naminami-midori-lg.svg");
+    }
   }
 }
