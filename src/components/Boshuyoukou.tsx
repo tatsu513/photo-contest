@@ -80,13 +80,11 @@ const Boshuyoukou: React.VFC<Props> = ({ onClick, goApply }) => {
               優秀作品は、以下の流山ツーリズムデザインWEBサイトで発表予定です。
             </li>
             <li className={styles.listItem}>
-              <li className={styles.listItem}>
-                <Link href="https://nagareyama-td.com/">
-                  <a className={styles.ListItemLink} target="_blank">
-                    https://nagareyama-td.com/
-                  </a>
-                </Link>
-              </li>
+              <Link href="https://nagareyama-td.com/">
+                <a className={styles.ListItemLink} target="_blank">
+                  https://nagareyama-td.com/
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
