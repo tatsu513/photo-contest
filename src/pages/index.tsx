@@ -14,7 +14,12 @@ import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
 
-const IndexPage = () => {
+interface Props {
+  postData: any;
+}
+
+const IndexPage: React.VFC<Props> = ({ postData }) => {
+  console.log({ postData });
   const ctx = useContext(ContextData);
   const isLg = ctx.windowWidth > 1025;
 
@@ -52,7 +57,7 @@ const IndexPage = () => {
       <TopImage />
       <Ichioshi goApply={goApply} />
       <Yushusakuhin />
-      <Posts />
+      <Posts postData={postData} />
       <HowToApply goTorikata={goTorikata} />
       <Torikatakouza />
       {isLg ? (
@@ -72,24 +77,24 @@ const IndexPage = () => {
   );
 };
 
-// export const getStaticProps = async () => {
-//   const instagramId = 17841450082182860;
-//   const query = encodeURI("マキアート");
-//   const accessToken =
-//     "EAAqkOD7kZBkkBAB5q6U0NbzU93Hzazb2OgjZC99pHkboUb9AZAM3jiHoCOW2HAQP8ErZCT93xhIVMPLxUr7iqwWXp1XAWnQ32DK2ekYN6R8pJkZC2tPRFYFfW1FmGVsUnePQIXUcmZAhf60vJWJaac9h4SqmBXX0Ipefifg6QIZCmuv9zHnNTe6";
-//   const idSearchUrl = `https://graph.facebook.com/ig_hashtag_search?user_id=${instagramId}&q=${query}&access_token=${accessToken}`;
+export const getStaticProps = async () => {
+  const instagramId = 17841450082182860;
+  const query = encodeURI("マキアート");
+  const accessToken =
+    "EAAqkOD7kZBkkBAAyWkAKRKWQKnBjwZAZBJHTLhM8ZA6NhREWmZAZARRTEEubSEUdWkKBNZCyik3YaqsjVHkVe1VcaiE0drdvqDVWhC4MbolnhitKvITz2p07zfYHkz0TAyKEBM4P6nGjn3iuxy3pHb6CTEoe8UOjN8mfUzixKcgvMLzNZC1JpI2i";
+  const idSearchUrl = `https://graph.facebook.com/ig_hashtag_search?user_id=${instagramId}&q=${query}&access_token=${accessToken}`;
 
-//   const res = await fetch(idSearchUrl, { method: "GET" });
-//   const json = await res.json();
-//   const hashId = json.data[0].id;
+  const res = await fetch(idSearchUrl, { method: "GET" });
+  const json = await res.json();
+  const hashId = json.data[0].id;
 
-//   const getDataUrl = `https://graph.facebook.com/${hashId}/top_media?user_id=${instagramId}&q=${query}&access_token=${accessToken}&fields=id,media_type,media_url,permalink,like_count,comments_count,caption,timestamp,children{id,media_url}&limit=10`;
+  const getDataUrl = `https://graph.facebook.com/${hashId}/top_media?user_id=${instagramId}&q=${query}&access_token=${accessToken}&fields=id,media_type,media_url,permalink,like_count,comments_count,caption,timestamp,children{id,media_url}&limit=10`;
 
-//   const dataRes = await fetch(getDataUrl, { method: "GET" });
-//   const dataJson = await dataRes.json();
-//   const postData = dataJson;
+  const dataRes = await fetch(getDataUrl, { method: "GET" });
+  const dataJson = await dataRes.json();
+  const postData = dataJson;
 
-//   return { props: { postData } };
-// };
+  return { props: { postData } };
+};
 
 export default IndexPage;
