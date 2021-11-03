@@ -72,9 +72,9 @@ const Posts: React.VFC<Props> = ({ postData }) => {
     },
   ];
 
-  const customData = posts
-    .map((dammy, i) => (i < showNum ? dammy : null))
-    .filter((data) => data);
+  // const customData = posts
+  //   .map((dammy, i) => (i < showNum ? dammy : null))
+  //   .filter((data) => data);
 
   return (
     <div className={styles.postsBox}>
@@ -86,7 +86,7 @@ const Posts: React.VFC<Props> = ({ postData }) => {
           Instagramに投稿された作品から、ピックアップしてご紹介！
         </p>
         <div className={styles.posts}>
-          <ul
+          {/* <ul
             className={`${styles.postBox} ${
               customData.length % 3 === 2 && styles.remainder
             }`}
@@ -118,7 +118,7 @@ const Posts: React.VFC<Props> = ({ postData }) => {
                 </Link>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
         <PrimaryButton text={"もっと見る"} onClick={addShowNum} />
       </section>
