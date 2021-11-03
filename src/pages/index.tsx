@@ -78,15 +78,26 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
 };
 
 export const getStaticProps = async () => {
-  const instagramId = process.env.NEXT_PUBLIC_INSTGRAM_ID;
-  const query = encodeURI("マキアート");
-  const accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
-  const hashId = process.env.NEXT_PUBLIC_HASH_ID;
-  const getDataUrl = `https://graph.facebook.com/${hashId}/top_media?user_id=${instagramId}&q=${query}&access_token=${accessToken}&fields=id,media_type,media_url,permalink,like_count,comments_count,caption,timestamp,children{id,media_url}&limit=10`;
+  // const instagramId = process.env.NEXT_PUBLIC_INSTGRAM_ID;
+  // const query = encodeURI("マキアート");
+  // const accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
+  // const idSearchUrl = `https://graph.facebook.com/ig_hashtag_search?user_id=${instagramId}&q=${query}&access_token=${accessToken}`;
 
-  const dataRes = await fetch(getDataUrl, { method: "GET" });
-  const dataJson = await dataRes.json();
-  const postData = dataJson;
+  // const res = await fetch(idSearchUrl, { method: "GET" });
+  // const json = await res.json();
+  // const hashId = json.data[0].id;
+
+  // const getDataUrl = `https://graph.facebook.com/${hashId}/top_media?user_id=${instagramId}&q=${query}&access_token=${accessToken}&fields=id,media_type,media_url,permalink,like_count,comments_count,caption,timestamp,children{id,media_url}&limit=10`;
+
+  // const dataRes = await fetch(getDataUrl, { method: "GET" });
+  // const dataJson = await dataRes.json();
+  // const postData = dataJson;
+
+  const url = "https://api.sampleapis.com/futurama/info";
+  const a = await fetch(url);
+  const b = await a.json();
+
+  const postData = b;
 
   return { props: { postData } };
 };
