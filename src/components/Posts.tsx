@@ -104,16 +104,23 @@ const Posts: React.VFC<Props> = ({ postData }) => {
                       />
                     </div>
                     <div className={styles.postImageBox}>
-                      <Image
+                      <img
                         src={
                           post.media_url
                             ? post.media_url
                             : post.children.data[0].media_url
                         }
-                        alt="サンプル"
+                      />
+                      {/* <Image
+                        src={
+                          post.media_url
+                            ? post.media_url
+                            : post.children.data[0].media_url
+                        }
+                        alt={`投稿${i}`}
                         width={1000}
                         height={1000}
-                      />
+                      /> */}
                     </div>
                     <p className={styles.postText}>{post.caption}</p>
                   </a>
