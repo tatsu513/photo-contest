@@ -78,10 +78,9 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
 };
 
 export const getStaticProps = async () => {
-  const instagramId = 17841450082182860;
+  const instagramId = process.env.NEXT_PUBLIC_HASH_ID;
   const query = encodeURI("マキアート");
-  const accessToken =
-    "EAAqkOD7kZBkkBAAyWkAKRKWQKnBjwZAZBJHTLhM8ZA6NhREWmZAZARRTEEubSEUdWkKBNZCyik3YaqsjVHkVe1VcaiE0drdvqDVWhC4MbolnhitKvITz2p07zfYHkz0TAyKEBM4P6nGjn3iuxy3pHb6CTEoe8UOjN8mfUzixKcgvMLzNZC1JpI2i";
+  const accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
   const idSearchUrl = `https://graph.facebook.com/ig_hashtag_search?user_id=${instagramId}&q=${query}&access_token=${accessToken}`;
 
   const res = await fetch(idSearchUrl, { method: "GET" });
