@@ -24,54 +24,44 @@ const Posts = () => {
 
   const dammys = [
     {
-      caption:
-        "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg",
+      caption: "ここに取得した投稿のキャンプションが入ります。",
+      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
     },
     {
-      caption:
-        "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg",
+      caption: "ここに取得した投稿のキャンプションが入ります。",
+      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
     },
     {
-      caption:
-        "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg",
+      caption: "ここに取得した投稿のキャンプションが入ります。",
+      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
     },
     {
-      caption:
-        "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg",
+      caption: "ここに取得した投稿のキャンプションが入ります。",
+      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
     },
     {
-      caption:
-        "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg",
+      caption: "ここに取得した投稿のキャンプションが入ります。",
+      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
     },
     {
-      caption:
-        "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg",
+      caption: "ここに取得した投稿のキャンプションが入ります。",
+      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
     },
     {
-      caption:
-        "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg",
+      caption: "ここに取得した投稿のキャンプションが入ります。",
+      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
     },
     {
-      caption:
-        "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg",
+      caption: "ここに取得した投稿のキャンプションが入ります。",
+      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
     },
     {
-      caption:
-        "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg",
+      caption: "ここに取得した投稿のキャンプションが入ります。",
+      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
     },
     {
-      caption:
-        "１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211018&id=47070197f4cfaa1a9979f19f686dea41dc56a7b0&type=jpeg",
+      caption: "ここに取得した投稿のキャンプションが入ります。",
+      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
     },
   ];
 

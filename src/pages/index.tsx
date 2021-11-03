@@ -72,4 +72,24 @@ const IndexPage = () => {
   );
 };
 
+// export const getStaticProps = async () => {
+//   const instagramId = 17841450082182860;
+//   const query = encodeURI("マキアート");
+//   const accessToken =
+//     "EAAqkOD7kZBkkBAB5q6U0NbzU93Hzazb2OgjZC99pHkboUb9AZAM3jiHoCOW2HAQP8ErZCT93xhIVMPLxUr7iqwWXp1XAWnQ32DK2ekYN6R8pJkZC2tPRFYFfW1FmGVsUnePQIXUcmZAhf60vJWJaac9h4SqmBXX0Ipefifg6QIZCmuv9zHnNTe6";
+//   const idSearchUrl = `https://graph.facebook.com/ig_hashtag_search?user_id=${instagramId}&q=${query}&access_token=${accessToken}`;
+
+//   const res = await fetch(idSearchUrl, { method: "GET" });
+//   const json = await res.json();
+//   const hashId = json.data[0].id;
+
+//   const getDataUrl = `https://graph.facebook.com/${hashId}/top_media?user_id=${instagramId}&q=${query}&access_token=${accessToken}&fields=id,media_type,media_url,permalink,like_count,comments_count,caption,timestamp,children{id,media_url}&limit=10`;
+
+//   const dataRes = await fetch(getDataUrl, { method: "GET" });
+//   const dataJson = await dataRes.json();
+//   const postData = dataJson;
+
+//   return { props: { postData } };
+// };
+
 export default IndexPage;
