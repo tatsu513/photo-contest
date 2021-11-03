@@ -86,8 +86,9 @@ export const getStaticProps = async () => {
 
   const dataRes = await fetch(getDataUrl, { method: "GET" });
   const dataJson = await dataRes.json();
+  const postData = dataJson;
 
-  return { props: { postData: dataJson } };
+  return { props: { postData } };
 };
 
 export default IndexPage;
