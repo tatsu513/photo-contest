@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ["lazesoftware.com", "scontent-nrt1-1.cdninstagram.com"],
+    domains: ["lazesoftware.com", "scontent-sjc3-1.cdninstagram.com"],
   },
 };
