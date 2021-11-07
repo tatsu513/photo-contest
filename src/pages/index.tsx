@@ -55,6 +55,17 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
         <title>流山カレンダーフォトコンテスト</title>
       </Head>
       <TopImage />
+      <div className="facebook-login-box">
+        <div
+          className="fb-login-button"
+          data-width=""
+          data-size="large"
+          data-button-type="continue_with"
+          data-layout="default"
+          data-auto-logout-link="false"
+          data-use-continue-as="false"
+        />
+      </div>
       <Ichioshi goApply={goApply} />
       <Yushusakuhin />
       <Posts postData={postData} />
