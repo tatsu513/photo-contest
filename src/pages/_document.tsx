@@ -6,7 +6,6 @@ const _document = () => {
       <Head />
       <body>
         <div id="fb-root"></div>
-        <div id="fb-root"></div>
         <script
           async
           defer
