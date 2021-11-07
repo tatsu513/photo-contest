@@ -30,22 +30,22 @@ const Torikatakouza = () => {
         <div className={styles.youtubeContent}>
           <div className={styles.movie}>
             <YouTube
-              videoId="drvH4XbZoPs"
+              videoId="UeVUvaRg7yk"
               className={styles.iframe}
               containerClassName={styles.youtube}
             />
           </div>
-          <div className={styles.title}>主役を決めよう！編</div>
+          <div className={styles.title}>準備編</div>
         </div>
         <div className={styles.youtubeContent}>
           <div className={styles.movie}>
             <YouTube
-              videoId="409xx9r5NQ0"
+              videoId="9I8IwaScGG4"
               className={styles.iframe}
               containerClassName={styles.youtube}
             />
           </div>
-          <div className={styles.title}>明るさを調整しよう！編</div>
+          <div className={styles.title}>撮影編</div>
         </div>
       </section>
       <div className="namiBox midori" />
