@@ -14,11 +14,16 @@ import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
 import { useRouter } from "next/router";
+
+// 認証用
+import { signIn, useSession } from "next-auth/client";
 interface Props {
   postData: any;
 }
 
 const IndexPage: React.VFC<Props> = ({ postData }) => {
+  const [session, loading] = useSession();
+
   const router = useRouter();
   console.log({ postData });
   const ctx = useContext(ContextData);
@@ -55,26 +60,42 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       <Head>
         <title>流山カレンダーフォトコンテスト</title>
       </Head>
-      <TopImage />
-      <p onClick={() => router.push("/Login")}>ログイン</p>
-      <Ichioshi goApply={goApply} />
-      <Yushusakuhin />
-      <Posts postData={postData} />
-      <HowToApply goTorikata={goTorikata} />
-      <Torikatakouza />
-      {isLg ? (
-        <BoshuyoukouLg onClick={openRules} goApply={goApply} />
-      ) : (
-        <Boshuyoukou onClick={openRules} goApply={goApply} />
+      {!session && (
+        <>
+          {loading ? (
+            <p>Loading ...</p>
+          ) : (
+            <div>
+              Not signed in <br />
+              <button onClick={() => signIn()}>Sign in</button>
+            </div>
+          )}
+        </>
       )}
-      <Footer />
-      <div
-        className={`${styles.rulesWrapper} ${
-          isOpenRules && styles.isOpen
-        }`}
-      >
-        <Rules onClick={closeRules} />
-      </div>
+      {session && (
+        <>
+          <TopImage />
+          <p onClick={() => router.push("/Login")}>ログイン</p>
+          <Ichioshi goApply={goApply} />
+          <Yushusakuhin />
+          <Posts postData={postData} />
+          <HowToApply goTorikata={goTorikata} />
+          <Torikatakouza />
+          {isLg ? (
+            <BoshuyoukouLg onClick={openRules} goApply={goApply} />
+          ) : (
+            <Boshuyoukou onClick={openRules} goApply={goApply} />
+          )}
+          <Footer />
+          <div
+            className={`${styles.rulesWrapper} ${
+              isOpenRules && styles.isOpen
+            }`}
+          >
+            <Rules onClick={closeRules} />
+          </div>
+        </>
+      )}
     </>
   );
 };
