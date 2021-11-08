@@ -13,14 +13,18 @@ import BoshuyoukouLg from "@/components/BoshuyoukouLg";
 import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
-import { useRouter } from "next/router";
+
+// 認証
+import { FacebookAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase";
+
 interface Props {
   postData: any;
 }
 
 const IndexPage: React.VFC<Props> = ({ postData }) => {
-  const router = useRouter();
-  console.log({ postData });
+  const provider = new FacebookAuthProvider();
+
   const ctx = useContext(ContextData);
   const isLg = ctx.windowWidth > 1025;
 
@@ -47,8 +51,20 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       behavior: "smooth",
     });
   };
-  const isSuccess = () => {
-    alert("is Logined with Facebook");
+  const [user, setUser] = useState<any>({});
+  const [token, setToken] = useState("");
+  const [hasError, setHassError] = useState(false);
+  const signIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        setUser(result.user);
+        const credential =
+          FacebookAuthProvider.credentialFromResult(result);
+        setToken(credential.accessToken);
+      })
+      .catch(() => {
+        setHassError(true);
+      });
   };
   useEffect(() => {
     smoothscroll.polyfill();
@@ -61,16 +77,8 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       <>
         <TopImage />
         <div className="facebook-login-box">
-          <div
-            className="fb-login-button"
-            data-width="400"
-            data-size="large"
-            data-button-type="continue_with"
-            data-layout="default"
-            data-auto-logout-link="true"
-            data-use-continue-as="false"
-            data-onlogin={isSuccess}
-          />
+          <div onClick={signIn}>facebookでログイン</div>
+          {token !== "" && <p>LOGINED</p>}
         </div>
         <Ichioshi goApply={goApply} />
         <Yushusakuhin />
