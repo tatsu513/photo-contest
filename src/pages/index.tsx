@@ -60,42 +60,38 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       <Head>
         <title>流山カレンダーフォトコンテスト</title>
       </Head>
-      {!session && (
-        <>
-          {loading ? (
-            <p>Loading ...</p>
-          ) : (
-            <div>
-              Not signed in <br />
-              <button onClick={() => signIn()}>Sign in</button>
-            </div>
-          )}
-        </>
-      )}
-      {session && (
-        <>
-          <TopImage />
-          <p onClick={() => router.push("/Login")}>ログイン</p>
-          <Ichioshi goApply={goApply} />
-          <Yushusakuhin />
-          <Posts postData={postData} />
-          <HowToApply goTorikata={goTorikata} />
-          <Torikatakouza />
-          {isLg ? (
-            <BoshuyoukouLg onClick={openRules} goApply={goApply} />
-          ) : (
-            <Boshuyoukou onClick={openRules} goApply={goApply} />
-          )}
-          <Footer />
+      <>
+        <TopImage />
+        <div className="facebook-login-box">
           <div
-            className={`${styles.rulesWrapper} ${
-              isOpenRules && styles.isOpen
-            }`}
-          >
-            <Rules onClick={closeRules} />
-          </div>
-        </>
-      )}
+            className="fb-login-button"
+            data-width="400"
+            data-size="large"
+            data-button-type="continue_with"
+            data-layout="default"
+            data-auto-logout-link="false"
+            data-use-continue-as="false"
+          />
+        </div>
+        <Ichioshi goApply={goApply} />
+        <Yushusakuhin />
+        <Posts postData={postData} />
+        <HowToApply goTorikata={goTorikata} />
+        <Torikatakouza />
+        {isLg ? (
+          <BoshuyoukouLg onClick={openRules} goApply={goApply} />
+        ) : (
+          <Boshuyoukou onClick={openRules} goApply={goApply} />
+        )}
+        <Footer />
+        <div
+          className={`${styles.rulesWrapper} ${
+            isOpenRules && styles.isOpen
+          }`}
+        >
+          <Rules onClick={closeRules} />
+        </div>
+      </>
     </>
   );
 };
