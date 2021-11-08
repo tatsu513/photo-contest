@@ -14,27 +14,16 @@ import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
 
+// facebook認証
+import { signIn, signOut, useSession } from "next-auth/client";
+
 interface Props {
   postData: any;
 }
 
-const fbLogin = async () => {
-  const redirectUri = "https://photo-contest-2021.vercel.app/";
-  const apiUrl = `https://www.facebook.com/v12.0/dialog/oauth?client_id=${
-    process.env.NEXT_PUBLIC_APP_ID
-  }&redirect_uri=${redirectUri}&state=${"facebook-logined"}`;
-  await fetch(apiUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-};
-
 const IndexPage: React.VFC<Props> = ({ postData }) => {
+  const [session, loading] = useSession();
+  console.log({ postData });
   const ctx = useContext(ContextData);
   const isLg = ctx.windowWidth > 1025;
 
@@ -61,6 +50,33 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       behavior: "smooth",
     });
   };
+  const FaceBookLogin = () => {
+    return (
+      <div className="facebook-login-box">
+        {!session && (
+          <>
+            {loading ? (
+              <>Loading ...</>
+            ) : (
+              <>
+                Not signed in <br />
+                <button onClick={() => signIn()}>Sign in</button>
+              </>
+            )}
+          </>
+        )}
+        {session && (
+          <>
+            Signed in as <br />
+            <img src={session.user?.image ?? ""} width="50px" />
+            {session.user?.name} <br />
+            AccessToken : {session.accessToken} <br />
+            <button onClick={() => signOut()}>Sign out</button>
+          </>
+        )}
+      </div>
+    );
+  };
   useEffect(() => {
     smoothscroll.polyfill();
   }, []);
@@ -70,11 +86,7 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
         <title>流山カレンダーフォトコンテスト</title>
       </Head>
       <TopImage />
-      <div className="facebook-login-box">
-        <button className={"facebook-login"} onClick={fbLogin}>
-          facebookログイン
-        </button>
-      </div>
+      <FaceBookLogin />
       <Ichioshi goApply={goApply} />
       <Yushusakuhin />
       <Posts postData={postData} />

@@ -13,6 +13,7 @@ import {
   useState,
 } from "react";
 import Auth from "@/components/Auth";
+import { Provider } from "next-auth/client";
 
 interface InitialData {
   windowWidth: number;
@@ -72,20 +73,22 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     }
   }, [username, password]);
   return (
-    <ContextData.Provider value={{ ...ctx, setCtx }}>
-      <main>
-        {isAdmin ? (
-          <Component {...pageProps} />
-        ) : (
-          <Auth
-            username={username}
-            password={password}
-            onChange={inputValue}
-            onSubmit={checkUser}
-          />
-        )}
-      </main>
-    </ContextData.Provider>
+    <Provider session={pageProps.session}>
+      <ContextData.Provider value={{ ...ctx, setCtx }}>
+        <main>
+          {isAdmin ? (
+            <Component {...pageProps} />
+          ) : (
+            <Auth
+              username={username}
+              password={password}
+              onChange={inputValue}
+              onSubmit={checkUser}
+            />
+          )}
+        </main>
+      </ContextData.Provider>
+    </Provider>
   );
 };
 
