@@ -14,16 +14,11 @@ import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
 import { useRouter } from "next/router";
-
-// 認証用
-import { signIn, useSession } from "next-auth/client";
 interface Props {
   postData: any;
 }
 
 const IndexPage: React.VFC<Props> = ({ postData }) => {
-  const [session, loading] = useSession();
-
   const router = useRouter();
   console.log({ postData });
   const ctx = useContext(ContextData);
