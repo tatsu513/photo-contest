@@ -24,7 +24,7 @@ const fbLogin = async () => {
     process.env.NEXT_PUBLIC_APP_ID
   }&redirect_uri=${redirectUri}&state=${"facebook-logined"}`;
   await fetch(apiUrl, {
-    method: "POST",
+    method: "GET",
     headers: { "Content-Type": "application/json" },
   })
     .then((response) => response.json())
