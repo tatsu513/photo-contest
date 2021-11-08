@@ -55,14 +55,18 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
   const [token, setToken] = useState("");
   const [hasError, setHassError] = useState(false);
   const signIn = () => {
+    alert("一応きてる");
     signInWithPopup(auth, provider)
       .then((result) => {
+        console.log("success");
+        console.log(result.user);
         setUser(result.user);
         const credential =
           FacebookAuthProvider.credentialFromResult(result);
         setToken(credential.accessToken);
       })
       .catch(() => {
+        console.log("faild");
         setHassError(true);
       });
   };
@@ -80,6 +84,8 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
           <div onClick={signIn}>facebookでログイン</div>
           {token !== "" && <p>LOGINED</p>}
         </div>
+        <p>token：{token}</p>
+        <p>hasError{hasError}</p>
         <Ichioshi goApply={goApply} />
         <Yushusakuhin />
         <Posts postData={postData} />
