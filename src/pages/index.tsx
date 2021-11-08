@@ -51,23 +51,20 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       behavior: "smooth",
     });
   };
-  const [user, setUser] = useState<any>({});
-  const [token, setToken] = useState("");
-  const [hasError, setHassError] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const signIn = () => {
-    alert("一応きてる");
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log("success");
-        console.log(result.user);
-        setUser(result.user);
+        const user = result.user;
+        setIsSuccess(true);
         const credential =
           FacebookAuthProvider.credentialFromResult(result);
-        setToken(credential.accessToken);
+        console.log({ user });
+        console.log({ token: credential.accessToken });
+        console.log(`${user.displayName}でログインされました！`);
       })
       .catch(() => {
         console.log("faild");
-        setHassError(true);
       });
   };
   useEffect(() => {
@@ -78,33 +75,35 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       <Head>
         <title>流山カレンダーフォトコンテスト</title>
       </Head>
-      <>
-        <TopImage />
+      {!isSuccess ? (
         <div className="facebook-login-box">
-          <div onClick={signIn}>facebookでログイン</div>
-          {token !== "" && <p>LOGINED</p>}
+          <button className="facebook-login" onClick={signIn}>
+            facebookでログイン
+          </button>
         </div>
-        <p>token：{token}</p>
-        <p>hasError{hasError}</p>
-        <Ichioshi goApply={goApply} />
-        <Yushusakuhin />
-        <Posts postData={postData} />
-        <HowToApply goTorikata={goTorikata} />
-        <Torikatakouza />
-        {isLg ? (
-          <BoshuyoukouLg onClick={openRules} goApply={goApply} />
-        ) : (
-          <Boshuyoukou onClick={openRules} goApply={goApply} />
-        )}
-        <Footer />
-        <div
-          className={`${styles.rulesWrapper} ${
-            isOpenRules && styles.isOpen
-          }`}
-        >
-          <Rules onClick={closeRules} />
-        </div>
-      </>
+      ) : (
+        <>
+          <TopImage />
+          <Ichioshi goApply={goApply} />
+          <Yushusakuhin />
+          <Posts postData={postData} />
+          <HowToApply goTorikata={goTorikata} />
+          <Torikatakouza />
+          {isLg ? (
+            <BoshuyoukouLg onClick={openRules} goApply={goApply} />
+          ) : (
+            <Boshuyoukou onClick={openRules} goApply={goApply} />
+          )}
+          <Footer />
+          <div
+            className={`${styles.rulesWrapper} ${
+              isOpenRules && styles.isOpen
+            }`}
+          >
+            <Rules onClick={closeRules} />
+          </div>
+        </>
+      )}
     </>
   );
 };
