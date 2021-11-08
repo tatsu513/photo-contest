@@ -1,18 +1,15 @@
 import {
-  getAuth,
-  signInWithRedirect,
   signOut,
-  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
-import { auth } from "./firebase";
-
-import { FacebookAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase";
 
 import React, { useState } from "react";
 
 const Login = () => {
   const provider = new FacebookAuthProvider();
-  const [user, setUser] = useState<any>("");
+  const [user, setUser] = useState<any>({});
 
   const loginAction = (): any => {
     signInWithPopup(auth, provider)
@@ -23,7 +20,7 @@ const Login = () => {
           FacebookAuthProvider.credentialFromResult(result);
         const accessToken = credential.accessToken;
       })
-      .catch((error) => {
+      .catch(() => {
         alert("失敗");
       });
   };
