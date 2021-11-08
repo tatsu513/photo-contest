@@ -9,19 +9,20 @@ import React, { useState } from "react";
 
 const Login = () => {
   const provider = new FacebookAuthProvider();
-  const [user, setUser] = useState<any>({});
+  const [user, setUser] = useState<any>(undefined);
+  const [accessToken, setAccessToken] = useState("");
 
-  const loginAction = (): any => {
+  const signinWithFacebook = (): any => {
     signInWithPopup(auth, provider)
       .then((result) => {
         setUser(result.user);
         console.log(result.user);
         const credential =
           FacebookAuthProvider.credentialFromResult(result);
-        const accessToken = credential.accessToken;
+        setAccessToken(credential.accessToken);
       })
       .catch(() => {
-        alert("失敗です");
+        setUser(undefined);
       });
   };
 
@@ -30,8 +31,11 @@ const Login = () => {
   };
   return (
     <div>
-      <p onClick={loginAction}>ログイン</p>
+      <p onClick={signinWithFacebook}>ログイン</p>
       <p onClick={logout}>ログアウト</p>
+      <div style={{ marginTop: 36 }}>
+        {user ? <p>OK</p> : <p>No</p>}
+      </div>
     </div>
   );
 };
