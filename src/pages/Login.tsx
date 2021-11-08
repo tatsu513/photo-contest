@@ -21,7 +21,7 @@ const Login = () => {
         const accessToken = credential.accessToken;
       })
       .catch(() => {
-        alert("失敗");
+        alert("失敗です");
       });
   };
 
