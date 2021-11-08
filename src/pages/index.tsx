@@ -13,16 +13,13 @@ import BoshuyoukouLg from "@/components/BoshuyoukouLg";
 import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
-
-// facebook認証
-import { signIn, signOut, useSession } from "next-auth/client";
-
+import { useRouter } from "next/router";
 interface Props {
   postData: any;
 }
 
 const IndexPage: React.VFC<Props> = ({ postData }) => {
-  const [session, loading] = useSession();
+  const router = useRouter();
   console.log({ postData });
   const ctx = useContext(ContextData);
   const isLg = ctx.windowWidth > 1025;
@@ -50,33 +47,6 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       behavior: "smooth",
     });
   };
-  const FaceBookLogin = () => {
-    return (
-      <div className="facebook-login-box">
-        {!session && (
-          <>
-            {loading ? (
-              <>Loading ...</>
-            ) : (
-              <>
-                Not signed in <br />
-                <button onClick={() => signIn()}>Sign in</button>
-              </>
-            )}
-          </>
-        )}
-        {session && (
-          <>
-            Signed in as <br />
-            <img src={session.user?.image ?? ""} width="50px" />
-            {session.user?.name} <br />
-            AccessToken : {session.accessToken} <br />
-            <button onClick={() => signOut()}>Sign out</button>
-          </>
-        )}
-      </div>
-    );
-  };
   useEffect(() => {
     smoothscroll.polyfill();
   }, []);
@@ -86,7 +56,7 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
         <title>流山カレンダーフォトコンテスト</title>
       </Head>
       <TopImage />
-      <FaceBookLogin />
+      <p onClick={() => router.push("/Login")}>ログイン</p>
       <Ichioshi goApply={goApply} />
       <Yushusakuhin />
       <Posts postData={postData} />
