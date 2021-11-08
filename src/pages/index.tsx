@@ -23,12 +23,10 @@ const fbLogin = async () => {
   const apiUrl = `https://www.facebook.com/v12.0/dialog/oauth?client_id=${
     process.env.NEXT_PUBLIC_INSTGRAM_ID
   }&redirect_uri=${redirectUri}&state=${"facebook-logined"}`;
-  const headers = {
-    Accept: "application/json",
-    "Content-Type":
-      "application/x-www-form-urlencoded; charset=utf-8",
-  };
-  await fetch(apiUrl, { method: "POST" })
+  await fetch(apiUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+  })
     .then((response) => response.json())
     .then((data) => console.log(data));
 };
