@@ -3,7 +3,6 @@ import Image from "next/image";
 import sectionTitle from "images/section_title04_sp.svg";
 import sectionTitleMd from "images/section_title04_md.svg";
 import sectionTitleLg from "images/section_title04_lg.svg";
-import YouTube from "react-youtube";
 import { ContextData } from "pages/_app";
 import { useContext } from "react";
 
@@ -29,21 +28,31 @@ const Torikatakouza = () => {
         </p>
         <div className={styles.youtubeContent}>
           <div className={styles.movie}>
-            <YouTube
-              videoId="UeVUvaRg7yk"
-              className={styles.iframe}
-              containerClassName={styles.youtube}
-            />
+            <div className={styles.youtube}>
+              <iframe
+                className={`${styles.iframe} relative left-1/2 -translate-x-1/2 h-60 2xs:h-80 xs:h-96 lg:h-100 w-full sm:w-2/3`}
+                src="https://www.youtube-nocookie.com/embed/UeVUvaRg7yk"
+                title="YouTube video player"
+                frameBorder={"0"}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
           </div>
           <div className={styles.title}>準備編</div>
         </div>
         <div className={styles.youtubeContent}>
           <div className={styles.movie}>
-            <YouTube
-              videoId="9I8IwaScGG4"
-              className={styles.iframe}
-              containerClassName={styles.youtube}
-            />
+            <div className={styles.youtube}>
+              <iframe
+                className={`${styles.iframe} relative left-1/2 -translate-x-1/2 h-60 2xs:h-80 xs:h-96 lg:h-100 w-full sm:w-2/3`}
+                src="https://www.youtube-nocookie.com/embed/9I8IwaScGG4"
+                title="YouTube video player"
+                frameBorder={"0"}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
           </div>
           <div className={styles.title}>撮影編</div>
         </div>
