@@ -14,11 +14,15 @@ import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
 
+// facebook認証
+import { signIn, signOut, useSession } from "next-auth/client";
+
 interface Props {
   postData: any;
 }
 
 const IndexPage: React.VFC<Props> = ({ postData }) => {
+  const [session, loading] = useSession();
   console.log({ postData });
   const ctx = useContext(ContextData);
   const isLg = ctx.windowWidth > 1025;
@@ -46,6 +50,33 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       behavior: "smooth",
     });
   };
+  const FaceBookLogin = () => {
+    return (
+      <div className="facebook-login-box">
+        {!session && (
+          <>
+            {loading ? (
+              <>Loading ...</>
+            ) : (
+              <>
+                Not signed in <br />
+                <button onClick={() => signIn()}>Sign in</button>
+              </>
+            )}
+          </>
+        )}
+        {session && (
+          <>
+            Signed in as <br />
+            <img src={session.user?.image ?? ""} width="50px" />
+            {session.user?.name} <br />
+            AccessToken : {session.accessToken} <br />
+            <button onClick={() => signOut()}>Sign out</button>
+          </>
+        )}
+      </div>
+    );
+  };
   useEffect(() => {
     smoothscroll.polyfill();
   }, []);
@@ -55,17 +86,7 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
         <title>流山カレンダーフォトコンテスト</title>
       </Head>
       <TopImage />
-      <div className="facebook-login-box">
-        <div
-          className="fb-login-button"
-          data-width=""
-          data-size="large"
-          data-button-type="continue_with"
-          data-layout="default"
-          data-auto-logout-link="false"
-          data-use-continue-as="false"
-        />
-      </div>
+      <FaceBookLogin />
       <Ichioshi goApply={goApply} />
       <Yushusakuhin />
       <Posts postData={postData} />
