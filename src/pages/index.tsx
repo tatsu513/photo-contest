@@ -21,7 +21,7 @@ interface Props {
 const fbLogin = async () => {
   const redirectUri = "https://photo-contest-2021.vercel.app/";
   const apiUrl = `https://www.facebook.com/v12.0/dialog/oauth?client_id=${
-    process.env.NEXT_PUBLIC_INSTGRAM_ID
+    process.env.NEXT_PUBLIC_APP_ID
   }&redirect_uri=${redirectUri}&state=${"facebook-logined"}`;
   await fetch(apiUrl, {
     method: "POST",
