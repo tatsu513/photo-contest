@@ -18,8 +18,22 @@ interface Props {
   postData: any;
 }
 
+const fbLogin = async () => {
+  const redirectUri = "https://photo-contest-2021.vercel.app/";
+  const apiUrl = `https://www.facebook.com/v12.0/dialog/oauth?client_id=${
+    process.env.NEXT_PUBLIC_INSTGRAM_ID
+  }&redirect_uri=${redirectUri}&state=${"facebook-logined"}`;
+  const headers = {
+    Accept: "application/json",
+    "Content-Type":
+      "application/x-www-form-urlencoded; charset=utf-8",
+  };
+  await fetch(apiUrl, { method: "POST" })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+};
+
 const IndexPage: React.VFC<Props> = ({ postData }) => {
-  console.log({ postData });
   const ctx = useContext(ContextData);
   const isLg = ctx.windowWidth > 1025;
 
@@ -56,15 +70,9 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       </Head>
       <TopImage />
       <div className="facebook-login-box">
-        <div
-          className="fb-login-button"
-          data-width=""
-          data-size="large"
-          data-button-type="continue_with"
-          data-layout="default"
-          data-auto-logout-link="false"
-          data-use-continue-as="false"
-        />
+        <button className={"facebook-login"} onClick={fbLogin}>
+          facebookログイン
+        </button>
       </div>
       <Ichioshi goApply={goApply} />
       <Yushusakuhin />
