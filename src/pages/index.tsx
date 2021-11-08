@@ -52,6 +52,9 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       behavior: "smooth",
     });
   };
+  const isSuccess = () => {
+    alert("is Logined with Facebook");
+  };
   useEffect(() => {
     smoothscroll.polyfill();
   }, []);
@@ -69,8 +72,9 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
             data-size="large"
             data-button-type="continue_with"
             data-layout="default"
-            data-auto-logout-link="false"
+            data-auto-logout-link="true"
             data-use-continue-as="false"
+            data-onlogin={isSuccess}
           />
         </div>
         <Ichioshi goApply={goApply} />
