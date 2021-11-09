@@ -13,18 +13,13 @@ import BoshuyoukouLg from "@/components/BoshuyoukouLg";
 import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
-
-// 認証
-import { FacebookAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../firebase";
+import FacebookLogin from "react-facebook-login";
 
 interface Props {
   postData: any;
 }
 
 const IndexPage: React.VFC<Props> = ({ postData }) => {
-  const provider = new FacebookAuthProvider();
-
   const ctx = useContext(ContextData);
   const isLg = ctx.windowWidth > 1025;
 
@@ -52,20 +47,8 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
     });
   };
   const [isSuccess, setIsSuccess] = useState(false);
-  const signIn = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        setIsSuccess(true);
-        const credential =
-          FacebookAuthProvider.credentialFromResult(result);
-        console.log({ user });
-        console.log({ token: credential.accessToken });
-        console.log(`${user.displayName}でログインされました！`);
-      })
-      .catch(() => {
-        console.log("faild");
-      });
+  const responseFacebook = (res) => {
+    console.log(res);
   };
   useEffect(() => {
     smoothscroll.polyfill();
@@ -75,22 +58,19 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       <Head>
         <title>流山カレンダーフォトコンテスト</title>
       </Head>
+      <div className="facebook-login-box">
+        <FacebookLogin
+          appId="2995311247424073"
+          autoLoad={true}
+          fields="email"
+          scope="instagram_basic,show_pages_list"
+          callback={responseFacebook}
+          cssClass="fb-login-button"
+          icon="fa-facebook"
+        />
+      </div>
       {!isSuccess ? (
-        <div className="facebook-login-box">
-          {/* <button className="facebook-login" onClick={signIn}>
-            facebookでログイン
-          </button> */}
-          <div
-            className="fb-login-button"
-            data-width=""
-            data-size="large"
-            data-button-type="continue_with"
-            data-layout="default"
-            data-auto-logout-link="false"
-            data-use-continue-as="false"
-            data-scope="instagram_basic,show_pages_list"
-          />
-        </div>
+        <p>おおお</p>
       ) : (
         <>
           <TopImage />
