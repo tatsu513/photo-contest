@@ -77,9 +77,19 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       </Head>
       {!isSuccess ? (
         <div className="facebook-login-box">
-          <button className="facebook-login" onClick={signIn}>
+          {/* <button className="facebook-login" onClick={signIn}>
             facebookでログイン
-          </button>
+          </button> */}
+          <div
+            className="fb-login-button"
+            data-width=""
+            data-size="large"
+            data-button-type="continue_with"
+            data-layout="default"
+            data-auto-logout-link="false"
+            data-use-continue-as="false"
+            data-scope="instagram_basic,show_pages_list"
+          />
         </div>
       ) : (
         <>
