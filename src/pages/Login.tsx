@@ -30,13 +30,16 @@ const Login = () => {
     return signOut(auth);
   };
   return (
-    <div>
-      <p onClick={signinWithFacebook}>ログイン</p>
-      <p onClick={logout}>ログアウト</p>
-      <div style={{ marginTop: 36 }}>
-        {user ? <p>OK</p> : <p>No</p>}
-      </div>
-    </div>
+    <div
+      className="fb-login-button"
+      data-width=""
+      data-size="large"
+      data-button-type="continue_with"
+      data-layout="default"
+      data-auto-logout-link="true"
+      data-use-continue-as="true"
+      data-scope="instagram_basic,show_pages_list"
+    ></div>
   );
 };
 

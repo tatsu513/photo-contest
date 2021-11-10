@@ -75,35 +75,25 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       <Head>
         <title>流山カレンダーフォトコンテスト</title>
       </Head>
-      {!isSuccess ? (
-        <div className="facebook-login-box">
-          <button className="facebook-login" onClick={signIn}>
-            facebookでログイン
-          </button>
-        </div>
+      <TopImage />
+      <Ichioshi goApply={goApply} />
+      <Yushusakuhin />
+      <Posts postData={postData} />
+      <HowToApply goTorikata={goTorikata} />
+      <Torikatakouza />
+      {isLg ? (
+        <BoshuyoukouLg onClick={openRules} goApply={goApply} />
       ) : (
-        <>
-          <TopImage />
-          <Ichioshi goApply={goApply} />
-          <Yushusakuhin />
-          <Posts postData={postData} />
-          <HowToApply goTorikata={goTorikata} />
-          <Torikatakouza />
-          {isLg ? (
-            <BoshuyoukouLg onClick={openRules} goApply={goApply} />
-          ) : (
-            <Boshuyoukou onClick={openRules} goApply={goApply} />
-          )}
-          <Footer />
-          <div
-            className={`${styles.rulesWrapper} ${
-              isOpenRules && styles.isOpen
-            }`}
-          >
-            <Rules onClick={closeRules} />
-          </div>
-        </>
+        <Boshuyoukou onClick={openRules} goApply={goApply} />
       )}
+      <Footer />
+      <div
+        className={`${styles.rulesWrapper} ${
+          isOpenRules && styles.isOpen
+        }`}
+      >
+        <Rules onClick={closeRules} />
+      </div>
     </>
   );
 };
