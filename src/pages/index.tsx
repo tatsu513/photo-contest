@@ -14,17 +14,7 @@ import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
 
-// 認証
-import { FacebookAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../firebase";
-
-interface Props {
-  postData: any;
-}
-
-const IndexPage: React.VFC<Props> = ({ postData }) => {
-  const provider = new FacebookAuthProvider();
-
+const IndexPage: React.VFC = () => {
   const ctx = useContext(ContextData);
   const isLg = ctx.windowWidth > 1025;
 
@@ -51,22 +41,6 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       behavior: "smooth",
     });
   };
-  const [isSuccess, setIsSuccess] = useState(false);
-  const signIn = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        setIsSuccess(true);
-        const credential =
-          FacebookAuthProvider.credentialFromResult(result);
-        console.log({ user });
-        console.log({ token: credential.accessToken });
-        console.log(`${user.displayName}でログインされました！`);
-      })
-      .catch(() => {
-        console.log("faild");
-      });
-  };
   useEffect(() => {
     smoothscroll.polyfill();
   }, []);
@@ -78,7 +52,7 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       <TopImage />
       <Ichioshi goApply={goApply} />
       <Yushusakuhin />
-      <Posts postData={postData} />
+      <Posts />
       <HowToApply goTorikata={goTorikata} />
       <Torikatakouza />
       {isLg ? (
@@ -96,20 +70,6 @@ const IndexPage: React.VFC<Props> = ({ postData }) => {
       </div>
     </>
   );
-};
-
-export const getStaticProps = async () => {
-  const instagramId = process.env.NEXT_PUBLIC_INSTGRAM_ID;
-  const query = encodeURI("マキアート");
-  const accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
-  const hashId = process.env.NEXT_PUBLIC_HASH_ID;
-  const getDataUrl = `https://graph.facebook.com/${hashId}/top_media?user_id=${instagramId}&q=${query}&access_token=${accessToken}&fields=id,media_type,media_url,permalink,like_count,comments_count,caption,timestamp,children{id,media_url}&limit=10`;
-
-  const dataRes = await fetch(getDataUrl, { method: "GET" });
-  const dataJson = await dataRes.json();
-  const postData = dataJson;
-
-  return { props: { postData } };
 };
 
 export default IndexPage;
