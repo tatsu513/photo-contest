@@ -91,7 +91,7 @@ const Posts: React.VFC = () => {
             ))}
           </ul> */}
         </div>
-        <PrimaryButton text={"もっと見る"} onClick={addShowNum} />
+        {/* <PrimaryButton text={"もっと見る"} onClick={addShowNum} /> */}
       </section>
       <div className="namiBox midori" />
     </div>
