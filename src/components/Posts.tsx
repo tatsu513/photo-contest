@@ -5,17 +5,11 @@ import sectionTitleMd from "images/section_title03_md.svg";
 import sectionTitleLg from "images/section_title03_lg.svg";
 import anotherIcon from "images/anotherIcon.svg";
 import PrimaryButton from "./buttons/PrimaryButton";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ContextData } from "pages/_app";
 import Link from "next/link";
 
-interface Props {
-  postData: any;
-}
-
-const Posts: React.VFC<Props> = ({ postData }) => {
-  const posts = postData.data;
-  console.log(posts);
+const Posts: React.VFC = () => {
   const ctx = useContext(ContextData);
   const isMd = ctx.windowWidth > 600 && ctx.windowWidth <= 1024;
   const isLg = ctx.windowWidth > 1024;
@@ -29,54 +23,18 @@ const Posts: React.VFC<Props> = ({ postData }) => {
   const [showNum, setShowNum] = useState(6);
   const addShowNum = () => setShowNum((prevState) => prevState + 6);
 
-  const dammys = [
-    {
-      caption: "ここに取得した投稿のキャンプションが入ります。",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
-    },
-    {
-      caption: "ここに取得した投稿のキャンプションが入ります。",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
-    },
-    {
-      caption: "ここに取得した投稿のキャンプションが入ります。",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
-    },
-    {
-      caption: "ここに取得した投稿のキャンプションが入ります。",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
-    },
-    {
-      caption: "ここに取得した投稿のキャンプションが入ります。",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
-    },
-    {
-      caption: "ここに取得した投稿のキャンプションが入ります。",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
-    },
-    {
-      caption: "ここに取得した投稿のキャンプションが入ります。",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
-    },
-    {
-      caption: "ここに取得した投稿のキャンプションが入ります。",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
-    },
-    {
-      caption: "ここに取得した投稿のキャンプションが入ります。",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
-    },
-    {
-      caption: "ここに取得した投稿のキャンプションが入ります。",
-      url: "https://lazesoftware.com/tool/dummyimg/output?date=20211103&id=d2582a46dc8ace34b98c0c929938cf75c649c27e&type=png",
-    },
-  ];
-
-  const customData = posts
-    ? posts
-        .map((dammy, i) => (i < showNum ? dammy : null))
-        .filter((data) => data)
-    : [];
+  useEffect(() => {
+    (function (d, s, id) {
+      var js;
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://embedsocial.com/cdn/ht.js";
+      d.getElementsByTagName("head")[0].appendChild(js);
+    })(document, "script", "EmbedSocialHashtagScript");
+  }, []);
 
   return (
     <div className={styles.postsBox}>
@@ -88,7 +46,11 @@ const Posts: React.VFC<Props> = ({ postData }) => {
           Instagramに投稿された作品から、ピックアップしてご紹介！
         </p>
         <div className={styles.posts}>
-          <ul
+          <div
+            className="embedsocial-hashtag"
+            data-ref="7314257988d47bf8ee5eeed9cf274869bde59ee2"
+          />
+          {/* <ul
             className={`${styles.postBox} ${
               customData.length % 3 === 2 && styles.remainder
             }`}
@@ -111,7 +73,7 @@ const Posts: React.VFC<Props> = ({ postData }) => {
                             : post.children.data[0].media_url
                         }
                       />
-                      {/* <Image
+                      <Image
                         src={
                           post.media_url
                             ? post.media_url
@@ -120,14 +82,14 @@ const Posts: React.VFC<Props> = ({ postData }) => {
                         alt={`投稿${i}`}
                         width={1000}
                         height={1000}
-                      /> */}
+                      />
                     </div>
                     <p className={styles.postText}>{post.caption}</p>
                   </a>
                 </Link>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
         <PrimaryButton text={"もっと見る"} onClick={addShowNum} />
       </section>
