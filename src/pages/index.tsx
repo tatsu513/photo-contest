@@ -13,8 +13,11 @@ import BoshuyoukouLg from "@/components/BoshuyoukouLg";
 import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
+import { GetStaticProps } from "next";
 
-const IndexPage: React.VFC = () => {
+type Props = { title: string };
+
+const IndexPage: React.VFC<Props> = ({ title }) => {
   const ctx = useContext(ContextData);
   const isLg = ctx.windowWidth > 1025;
 
@@ -47,7 +50,7 @@ const IndexPage: React.VFC = () => {
   return (
     <>
       <Head>
-        <title>流山カレンダーフォトコンテスト</title>
+        <title>{title}</title>
       </Head>
       <TopImage />
       <Ichioshi goApply={goApply} />
@@ -70,6 +73,11 @@ const IndexPage: React.VFC = () => {
       </div>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const title = "流山カレンダーフォトコンテスト";
+  return { props: { title } };
 };
 
 export default IndexPage;

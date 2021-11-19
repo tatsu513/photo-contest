@@ -2,9 +2,10 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@types/next-auth": "^3.15.0",
@@ -14,6 +15,7 @@
     "eslint-plugin-react": "^7.26.1",
     "firebase": "^9.3.0",
     "next": "latest",
+    "next-sitemap": "^1.6.203",
     "react": "^17.0.2",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^17.0.2",
