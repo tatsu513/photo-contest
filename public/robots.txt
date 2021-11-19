@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://photo-contest.ntd-event.com
+
+# Sitemaps
+Sitemap: https://photo-contest.ntd-event.com/sitemap.xml
