@@ -4,27 +4,16 @@
   height: 100vh;
   width: 100%;
   position: relative;
-  background-image: url("../../images/top_image01.webp");
   background-position: center;
-  transition: background-image 500ms ease;
-  &.bg1 {
-    background-image: url("../../images/top_image01.webp");
-  }
-  &.bg2 {
-    background-image: url("../../images/top_image02.webp");
-  }
-  &.bg3 {
-    background-image: url("../../images/top_image03.webp");
-  }
-  &.bg4 {
-    background-image: url("../../images/top_image04.webp");
-  }
+  background-size: cover;
+  overflow: hidden;
+  transition: background-image 600ms ease;
 
   @include mq(md) {
     height: 700px;
   }
   @include mq(lg) {
-    height: 80vh;
+    height: 100vh;
   }
 }
 .image {
@@ -32,15 +21,17 @@
   max-width: 450px;
   padding: 0 24px;
   position: absolute;
-  top: 50%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
   width: 100%;
+  @include mq(md) {
+    top: 50%;
+  }
   @include mq(lg) {
-    height: 70vh;
-    max-width: 75vh;
-    padding-top: 20px;
-    // position: relative;
+    height: 92vh;
+    max-width: 92vh;
   }
 }
 .photographer {
@@ -49,4 +40,42 @@
   bottom: 56px;
   color: $white;
   font-size: 12px;
+}
+.bgItemBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.bgItem {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 2000ms;
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  &.isActive {
+    opacity: 1;
+  }
+  & > div {
+    max-width: 400% !important;
+    width: 400%;
+    left: -182%;
+    @include mq(md) {
+      max-width: 174% !important;
+      width: 174%;
+      left: -40%;
+    }
+    @include mq(lg) {
+      max-width: 130% !important;
+      width: 130%;
+      left: -18%;
+    }
+  }
 }

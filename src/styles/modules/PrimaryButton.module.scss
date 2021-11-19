@@ -7,10 +7,14 @@
   max-width: 276px;
   margin: 0 auto;
   width: 100%;
-  line-height: 48px;
+  line-height: 50px;
   background-color: $green;
   border-radius: 4px;
   color: $white;
   font-size: 12px;
   text-align: center;
+  transition: all 300ms ease;
+  &:hover {
+    background-color: $green-dark;
+  }
 }

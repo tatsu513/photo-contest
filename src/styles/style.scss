@@ -5,9 +5,14 @@ html,
 body {
   padding: 0;
   margin: 0;
+  color: #3d3d3d;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 26px;
+  @include mq(lg) {
+    font-size: 16px;
+    line-height: 30px;
+  }
 }
 
 body {
@@ -32,12 +37,16 @@ section {
 
   @include mq(md) {
     margin: 0 auto;
-    width: 536px;
+    width: 584px;
   }
   @include mq(lg) {
     margin: 0 auto;
     width: 948px;
   }
+}
+
+.a-link {
+  text-decoration: underline;
 }
 
 .circleWrapper {
@@ -57,9 +66,15 @@ section {
   transform: translateX(-50%);
   font-size: 0;
   &.shiro {
-    background-image: url("../images/naminami-shiro_sp.svg");
+    background-image: url("../images/naminami-shiro-sp.svg");
+    @include mq(md) {
+      background-image: url("../images/naminami-shiro-lg.svg");
+    }
   }
   &.midori {
-    background-image: url("../images/naminami-midori_sp.svg");
+    background-image: url("../images/naminami-midori-sp.svg");
+    @include mq(md) {
+      background-image: url("../images/naminami-midori-lg.svg");
+    }
   }
 }

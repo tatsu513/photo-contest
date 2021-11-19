@@ -7,7 +7,6 @@ import shotImage from "images/to_shot_image_sp.png";
 import PrimaryButton from "./buttons/PrimaryButton";
 import { ContextData } from "pages/_app";
 import { useContext } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 interface Props {
   goApply: () => void;

@@ -1,13 +1,25 @@
 import styles from "styles/modules/Torikatakouza.module.scss";
 import Image from "next/image";
 import sectionTitle from "images/section_title04_sp.svg";
-import YouTube from "react-youtube";
+import sectionTitleMd from "images/section_title04_md.svg";
+import sectionTitleLg from "images/section_title04_lg.svg";
+import { ContextData } from "pages/_app";
+import { useContext } from "react";
 
 const Torikatakouza = () => {
+  const ctx = useContext(ContextData);
+  const isMd = ctx.windowWidth > 600 && ctx.windowWidth <= 1024;
+  const isLg = ctx.windowWidth > 1024;
+
+  const titleImage = isMd
+    ? sectionTitleMd
+    : isLg
+    ? sectionTitleLg
+    : sectionTitle;
   return (
     <div className={styles.torikatakouzaBox} id="torikata">
       <div className={styles.titleBox}>
-        <Image src={sectionTitle} alt="スマホ写真撮り方講座" />
+        <Image src={titleImage} alt="スマホ写真撮り方講座" />
       </div>
       <section className={styles.torikataSection}>
         <p className={styles.text}>
@@ -16,23 +28,33 @@ const Torikatakouza = () => {
         </p>
         <div className={styles.youtubeContent}>
           <div className={styles.movie}>
-            <YouTube
-              videoId="drvH4XbZoPs"
-              className={styles.iframe}
-              containerClassName={styles.youtube}
-            />
+            <div className={styles.youtube}>
+              <iframe
+                className={`${styles.iframe} relative left-1/2 -translate-x-1/2 h-60 2xs:h-80 xs:h-96 lg:h-100 w-full sm:w-2/3`}
+                src="https://www.youtube-nocookie.com/embed/UeVUvaRg7yk"
+                title="YouTube video player"
+                frameBorder={"0"}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
           </div>
-          <div className={styles.title}>主役を決めよう！編</div>
+          <div className={styles.title}>準備編</div>
         </div>
         <div className={styles.youtubeContent}>
           <div className={styles.movie}>
-            <YouTube
-              videoId="409xx9r5NQ0"
-              className={styles.iframe}
-              containerClassName={styles.youtube}
-            />
+            <div className={styles.youtube}>
+              <iframe
+                className={`${styles.iframe} relative left-1/2 -translate-x-1/2 h-60 2xs:h-80 xs:h-96 lg:h-100 w-full sm:w-2/3`}
+                src="https://www.youtube-nocookie.com/embed/9I8IwaScGG4"
+                title="YouTube video player"
+                frameBorder={"0"}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
           </div>
-          <div className={styles.title}>明るさを調整しよう！編</div>
+          <div className={styles.title}>撮影編</div>
         </div>
       </section>
       <div className="namiBox midori" />

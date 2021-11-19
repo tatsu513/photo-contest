@@ -1,20 +1,27 @@
 @import "../common.scss";
 
 .torikatakouzaBox {
-  padding: 56px 0;
+  padding: 56px 0 96px;
   position: relative;
+  @include mq(lg) {
+    padding: 80px 0 96px;
+  }
 }
 .titleBox {
   margin-bottom: 40px;
   text-align: center;
 }
 .torikataSection {
-  @include mq(lg) {
-    width: 800px;
+  @include mq(md) {
+    width: 100%;
+    max-width: 848px;
   }
 }
 .text {
   margin-bottom: 48px;
+  @include mq(lg) {
+    font-size: 16px;
+  }
 }
 .youtubeContent {
   margin-bottom: 48px;
@@ -25,7 +32,11 @@
   background-color: $blue;
 }
 .title {
+  font-weight: bold;
   text-align: center;
+  @include mq(lg) {
+    font-size: 20px;
+  }
 }
 .youtube {
   position: relative;

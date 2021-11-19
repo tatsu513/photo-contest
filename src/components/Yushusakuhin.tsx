@@ -7,6 +7,7 @@ import sectionTitleLg from "images/section_title02_lg.svg";
 import calenderImage from "images/saiyushu_image_sp.png";
 import { ContextData } from "pages/_app";
 import { useContext } from "react";
+import Link from "next/link";
 
 const Yushusakuhin = () => {
   const ctx = useContext(ContextData);
@@ -31,7 +32,13 @@ const Yushusakuhin = () => {
           <p className={styles.text}>
             審査の結果、優秀作品に選ばれた投稿作品は、2022年4月始まりのカレンダーとしてまとめて、流山市内で販売します。
             <br />
-            また、流山市「杜のアトリエ黎明」で、優秀作品のリアル展示会も予定しています。
+            また、
+            <Link href="https://nagareyama-td.com/reimei/">
+              <a target="_blank" className="a-link">
+                「杜のアトリエ黎明」
+              </a>
+            </Link>
+            で、優秀作品のリアル展示会も予定しています。
           </p>
           <div className={styles.calenderImageBox}>
             <Image src={calenderImage} alt={"カレンダー"} />

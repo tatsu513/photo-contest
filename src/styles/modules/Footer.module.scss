@@ -18,8 +18,14 @@
   margin-bottom: 12px;
   color: $white;
   font-size: 10px;
+  @include mq(lg) {
+    font-size: 16px;
+  }
 }
 .logoBox {
   width: 118px;
   margin: 0 auto;
+  @include mq(lg) {
+    width: 160px;
+  }
 }

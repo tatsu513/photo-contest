@@ -2,20 +2,25 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@types/next-auth": "^3.15.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.26.1",
+    "firebase": "^9.3.0",
     "next": "latest",
+    "next-sitemap": "^1.6.203",
     "react": "^17.0.2",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^17.0.2",
-    "react-youtube": "^7.13.1"
+    "react-youtube": "^7.13.1",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",

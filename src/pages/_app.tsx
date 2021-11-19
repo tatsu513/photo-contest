@@ -10,7 +10,6 @@ import {
   useState,
 } from "react";
 import Auth from "@/components/Auth";
-
 interface InitialData {
   windowWidth: number;
   setCtx: Dispatch<
@@ -24,7 +23,10 @@ export const ContextData = createContext<InitialData>(
   {} as InitialData
 );
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) => {
   const [ctx, setCtx] = useState({
     windowWidth: 0,
   });

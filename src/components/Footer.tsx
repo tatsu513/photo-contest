@@ -1,6 +1,7 @@
 import styles from "styles/modules/Footer.module.scss";
 import Image from "next/image";
 import logo from "images/logo_sp.png";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -11,7 +12,11 @@ const Footer = () => {
           主催　流山ツーリズムデザイン
         </h4>
         <div className={styles.logoBox}>
-          <Image src={logo} alt="流山ツーリズムデザイン" />
+          <Link href="https://nagareyama-td.com/">
+            <a className={styles.ListItemLink} target="_blank">
+              <Image src={logo} alt="流山ツーリズムデザイン" />
+            </a>
+          </Link>
         </div>
       </div>
     </div>
