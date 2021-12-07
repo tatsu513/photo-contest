@@ -13,7 +13,9 @@ const RecruitmentClosed: React.VFC<Props> = ({ isAll }) => {
           <div className={styles.topBox}>
             <h1 className={styles.title}>募集は終了しました</h1>
             <p className={styles.text}>
-              たくさんのご応募ありがとうございました！
+              たくさんのご応募
+              <br className={styles.smOnly} />
+              ありがとうございました！
             </p>
           </div>
           <div className={styles.noteBox}>

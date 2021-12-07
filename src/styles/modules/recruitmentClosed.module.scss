@@ -1,3 +1,5 @@
+@import "../common.scss";
+
 .contentBox {
   margin-top: 56px;
   width: 100%;
@@ -19,21 +21,51 @@
   &.info {
     background-color: transparent;
     color: #fc6c4d;
+
+    @include mq(md) {
+      padding: 20px;
+    }
+  }
+
+  @include mq(md) {
+    padding: 12px 24px;
   }
 }
 
 .title {
   margin-bottom: 12px;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
+
+  @include mq(md) {
+    margin-bottom: 4px;
+    font-size: 24px;
+  }
+
+  @include mq(lg) {
+    margin-bottom: 12px;
+    font-size: 30px;
+  }
 }
 
 .text {
-  font-size: 24px;
+  font-size: 18px;
+
+  @include mq(lg) {
+    font-size: 24px;
+  }
 }
 
 .noteBox {
-  margin: 24px 64px;
+  margin: 16px;
+
+  @include mq(md) {
+    margin: 16px 32px;
+  }
+
+  @include mq(md) {
+    margin: 24px 64px;
+  }
 }
 
 .notes {
@@ -42,5 +74,16 @@
 
 .note {
   color: #fc6c4d;
-  font-size: 20px;
+  font-size: 12px;
+  line-height: 1.5;
+
+  @include mq(md) {
+    font-size: 20px;
+  }
+}
+
+.smOnly {
+  @include mq(md) {
+    display: none;
+  }
 }
