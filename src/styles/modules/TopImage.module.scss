@@ -76,6 +76,12 @@
       max-width: 130% !important;
       width: 130%;
       left: -18%;
+      height: 100vh;
+    }
+    img {
+      @include mq(lg) {
+        object-fit: cover;
+      }
     }
   }
 }

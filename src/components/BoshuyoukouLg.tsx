@@ -7,7 +7,7 @@ import Essentials from "./commons/Essentials";
 import TextTitle from "./commons/TextTitle";
 import Mayumiotsuka from "images/mayumiotsukaprofile_sp.jpg";
 import Instagram from "images/Instagram.svg";
-
+import RecruitmentClosed from "@/components/RecruitmentClosed";
 interface Props {
   onClick: () => void;
   goApply: () => void;
@@ -17,6 +17,7 @@ const BoshuyoukouLg: React.VFC<Props> = ({ onClick, goApply }) => {
   return (
     <div className={styles.boshuyoukouBox}>
       <TextTitle text={"募集要項"} />
+      <RecruitmentClosed isAll={false} />
       <div className={styles.contents}>
         <div className={styles.content}>
           <Essentials text={"応募規約"} />
