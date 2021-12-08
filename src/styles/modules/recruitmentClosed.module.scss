@@ -82,6 +82,10 @@
   }
 }
 
+.link {
+  text-decoration: underline;
+}
+
 .smOnly {
   @include mq(md) {
     display: none;
