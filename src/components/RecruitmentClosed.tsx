@@ -23,7 +23,7 @@ const RecruitmentClosed: React.VFC<Props> = ({ isAll }) => {
               <li className={styles.note}>
                 ※優秀作品発表は2022年1月中旬頃、
                 <Link href="https://nagareyama-td.com/">
-                  <a target="_blank">
+                  <a target="_blank" className={styles.link}>
                     流山ツーリズムデザインのサイト
                   </a>
                 </Link>
