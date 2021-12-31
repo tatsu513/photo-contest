@@ -14,6 +14,7 @@ import Rules from "@/components/Rules";
 import styles from "styles/modules/index.module.scss";
 import smoothscroll from "smoothscroll-polyfill";
 import { GetStaticProps } from "next";
+import RecruitmentClosed from "@/components/RecruitmentClosed";
 
 type Props = { title: string };
 
@@ -53,6 +54,7 @@ const IndexPage: React.VFC<Props> = ({ title }) => {
         <title>{title}</title>
       </Head>
       <TopImage />
+      <RecruitmentClosed isAll={true} />
       <Ichioshi goApply={goApply} />
       <Yushusakuhin />
       <Posts />

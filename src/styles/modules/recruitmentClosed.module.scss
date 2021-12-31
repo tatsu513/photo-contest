@@ -1,0 +1,93 @@
+@import "../common.scss";
+
+.contentBox {
+  margin-top: 56px;
+  width: 100%;
+  border: 3px solid #fc6c4d;
+  border-radius: 10px;
+
+  &.info {
+    margin-bottom: 56px;
+  }
+}
+
+.topBox {
+  padding: 24px;
+  width: 100%;
+  background-color: #fc6c4d;
+  color: white;
+  text-align: center;
+
+  &.info {
+    background-color: transparent;
+    color: #fc6c4d;
+
+    @include mq(md) {
+      padding: 20px;
+    }
+  }
+
+  @include mq(md) {
+    padding: 12px 24px;
+  }
+}
+
+.title {
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: bold;
+
+  @include mq(md) {
+    margin-bottom: 4px;
+    font-size: 24px;
+  }
+
+  @include mq(lg) {
+    margin-bottom: 12px;
+    font-size: 30px;
+  }
+}
+
+.text {
+  font-size: 18px;
+
+  @include mq(lg) {
+    font-size: 24px;
+  }
+}
+
+.noteBox {
+  margin: 16px;
+
+  @include mq(md) {
+    margin: 16px 32px;
+  }
+
+  @include mq(lg) {
+    margin: 24px 64px;
+  }
+}
+
+.notes {
+  text-align: left;
+}
+
+.note {
+  color: #fc6c4d;
+  font-size: 12px;
+  line-height: 1.5;
+
+  @include mq(lg) {
+    font-size: 20px;
+  }
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.smOnly {
+  @include mq(md) {
+    display: none;
+  }
+}
