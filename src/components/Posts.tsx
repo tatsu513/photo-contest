@@ -45,53 +45,16 @@ const Posts: React.VFC = () => {
         <p className={styles.text}>
           Instagramに投稿された作品から、ピックアップしてご紹介！
         </p>
-        <div className={styles.posts}>
-          <div
-            className="embedsocial-hashtag"
-            data-ref="7314257988d47bf8ee5eeed9cf274869bde59ee2"
-          />
-          {/* <ul
-            className={`${styles.postBox} ${
-              customData.length % 3 === 2 && styles.remainder
-            }`}
-          >
-            {customData.map((post, i) => (
-              <li key={i} className={styles.post}>
-                <Link href={post.permalink}>
-                  <a href={post.permalink} target="_blank">
-                    <div className={styles.anotherIcon}>
-                      <Image
-                        src={anotherIcon}
-                        alt="別タブでインスタグラムを開く"
-                      />
-                    </div>
-                    <div className={styles.postImageBox}>
-                      <img
-                        src={
-                          post.media_url
-                            ? post.media_url
-                            : post.children.data[0].media_url
-                        }
-                      />
-                      <Image
-                        src={
-                          post.media_url
-                            ? post.media_url
-                            : post.children.data[0].media_url
-                        }
-                        alt={`投稿${i}`}
-                        width={1000}
-                        height={1000}
-                      />
-                    </div>
-                    <p className={styles.postText}>{post.caption}</p>
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul> */}
-        </div>
-        {/* <PrimaryButton text={"もっと見る"} onClick={addShowNum} /> */}
+        <Link
+          href={
+            "https://www.instagram.com/explore/tags/%E6%B5%81%E5%B1%B1%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/?hl=ja"
+          }
+          passHref
+        >
+          <a target="_blank">
+            <PrimaryButton text={"もっと見る"} />
+          </a>
+        </Link>
       </section>
       <div className="namiBox midori" />
     </div>
